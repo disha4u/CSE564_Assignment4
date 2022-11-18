@@ -22,9 +22,12 @@ public class Main extends JFrame implements ActionListener {
 	*/
 	Main()
 	{
+		setSize(1200,1200);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
 		
 	
-    	}
+    }
 
 
 	/**
