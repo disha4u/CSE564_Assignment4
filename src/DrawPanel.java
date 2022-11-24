@@ -6,42 +6,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class DrawPanel extends JPanel implements Observable,ActionListener{
+public class DrawPanel extends Observable implements Runnable{
 	private List<Observer> observers=new ArrayList<Observer>();
-	
-	/**
-	* Notifies Observers the current state
-	*/
-	public void Notify()
-	{
-		for(Observer o: observers)
-		{
-			//o.Update();
-		}
-		
-	}
-	
-	/**
-	* adds Observer to the list of observers
-	* @param Observer object
-	*/
-	public void addObservers(Observer o)
-	{
-		observers.add(o);
-	}
-	
-	/**
-	* removes Observer from the list of observers
-	* @param Observer object
-	*/
-	public void removeObservers(Observer o)
-	{
-		observers.remove(o);
-	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void run() {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
+
 }
