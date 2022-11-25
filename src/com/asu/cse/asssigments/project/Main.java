@@ -30,12 +30,13 @@ public class Main extends JFrame  {
 		preferred.setSize(Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 2, Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 2);
 		Drawable drawable=new Drawable();
 		Writable writable=new Writable();
-		
+		JScrollPane taScroll = new JScrollPane(writable);
 		drawable.setPreferredSize(new Dimension(preferred.width/2,preferred.height));
 		writable.setPreferredSize(new Dimension(preferred.width/2,preferred.height));
 //		drawable.setMinimumSz(new Dimension(400,400));
-		writable.setPreferredSize(new Dimension(400,400));
+//		writable.setPreferredSize(new Dimension(400,400));
 		StatusBar statusBar=new StatusBar();
+		statusBar.setPreferredSize(new Dimension(preferred.width,50));
 		JMenu fileOption = new JMenu("File");
 		JMenu helpOption = new JMenu("Help");
 		JMenuBar menuBar = new JMenuBar();
@@ -46,7 +47,7 @@ public class Main extends JFrame  {
         menuBar.add(helpOption);
         add(menuBar,BorderLayout.NORTH);
         add(drawable,BorderLayout.CENTER);
-        add(writable,BorderLayout.WEST);
+        add(taScroll,BorderLayout.WEST);
         add(statusBar,BorderLayout.SOUTH);
         setTitle("CSE564 Final Project");
 		setPreferredSize(preferred);
