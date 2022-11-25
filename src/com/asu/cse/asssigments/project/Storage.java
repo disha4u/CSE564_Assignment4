@@ -8,8 +8,8 @@ import java.io.FileWriter;
 
 public class Storage extends Observable implements Runnable {
 
-	static ArrayList<Objects> classes;
-	static ArrayList<Relationship> rs;
+	private ArrayList<Objects> classes;
+	private ArrayList<Relationship> rs;
 	protected static Storage instance;
 	boolean addedclass;
 	boolean addedrelationship;
