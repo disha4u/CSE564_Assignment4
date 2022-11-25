@@ -10,12 +10,19 @@ public class TextPanel implements Observer,Runnable{
 	public void run() {
 		// TODO Auto-generated method stub
 		String code = null;
+		Relationship r;
+		InheritanceHandler ih=new InheritanceHandler();
 		int i;
 		for(i=0;i<storage.getclasssize();i++) {
 			Objects currentClass = storage.readclass(i); 
 			String className = currentClass.getname();
 			code+="Class "+ className + "{\n}\n";
 		}
+        for(i=0;i<storage.getrelationshipsize();i++) {
+        	r=storage.readrelationship(i);
+        	code=ih.getSourceCode(r,code);
+		    
+		} 
 		Writable writable = new Writable();
 		writable.setText(code);
 		writable.setVisible(true);

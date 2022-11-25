@@ -4,7 +4,7 @@ public class InheritanceHandler extends ConcreteHandler {
 	@Override
 	public String getSourceCode(Relationship r,String sourceCode) {  
 		// TODO Auto-generated method stub
-		if(r.name.toLowerCase().equals("inheritance"))
+		if(r.getname().toLowerCase().equals("inheritance"))
 		{ 
 			 
 			        // System.out.println("Hello, World!");
