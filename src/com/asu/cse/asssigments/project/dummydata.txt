@@ -1,0 +1,5 @@
+Classes
+sandwich,1,2
+patty,11,12
+Relationships
+sandwich,patty,Composition
