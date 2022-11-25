@@ -63,10 +63,28 @@ public class Storage extends Observable implements Observer {
 			
 			File myObj = new File(fname);
 		    Scanner myReader = new Scanner(myObj);
+		    int i=0;
 		    while (myReader.hasNextLine()) {
 		        String line = myReader.nextLine();
+		        if(i==0)
+		        	continue;
+		        if(line.startsWith("Relationships"))
+		        	break;
+		        String[] s=line.split(",",3);
+		        Objects o=new Objects(s[0],Double.parseDouble(s[1]),Double.parseDouble(s[2]));
+		        classes.add(o);
+		        i++;
 		        
 		    }
+		    while (myReader.hasNextLine()) {
+		        String line = myReader.nextLine();
+		        String[] s=line.split(",",3);
+		        Relationship r;
+		        
+		        rs.add(r);
+		        
+		    }
+		    
 		    myReader.close();
 		
 
