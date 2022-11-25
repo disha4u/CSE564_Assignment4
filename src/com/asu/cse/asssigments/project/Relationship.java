@@ -8,4 +8,9 @@ public abstract class Relationship {
 	* @param graphics object
 	*/
 	public  abstract void draw();
+	
+	@Override
+	public String toString() {
+		return name+","+class1+","+class2;
+	}
 }

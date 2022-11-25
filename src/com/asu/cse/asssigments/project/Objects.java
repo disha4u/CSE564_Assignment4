@@ -51,4 +51,9 @@ public class Objects {
  	public double gety() {
  		return ycoor;
  	}
+ 	
+ 	@Override
+ 	public String toString() {
+ 		return name+","+xcoor+","+ycoor;
+ 	}
 }
