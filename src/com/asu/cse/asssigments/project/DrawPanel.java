@@ -7,8 +7,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class DrawPanel extends Observable implements Runnable{
-	private List<Observer> observers=new ArrayList<Observer>();
+public class DrawPanel implements Runnable{
+	
 
 	@Override
 	public void run() {

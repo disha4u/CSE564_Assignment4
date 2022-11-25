@@ -1,11 +1,12 @@
 package com.asu.cse.asssigments.project;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
 
 
-public class Storage implements Runnable {
+public class Storage extends Observable implements Runnable {
 
 	static ArrayList<Objects> classes;
 	static ArrayList<Relationship> rs;
@@ -31,14 +32,14 @@ public class Storage implements Runnable {
 		return instance;
 	}
 	
-		
-	
 	public void addclass(Objects o) {
 		classes.add(o);
+		super.Notify();
 	}
 	
     public void addrelationship(Relationship r) {
 		rs.add(r);
+		super.Notify();
 	}
 
 	public Objects readclass(int index) {
