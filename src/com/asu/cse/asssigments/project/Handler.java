@@ -1,4 +1,4 @@
 package com.asu.cse.asssigments.project;
 public interface Handler {
-	public String getSourceCode(Relationship s);
+	public String getSourceCode(Relationship s,String sourceCode);
 }
