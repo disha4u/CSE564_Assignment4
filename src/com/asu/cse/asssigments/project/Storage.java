@@ -33,12 +33,30 @@ public class Storage implements Runnable {
 	
 		
 	
-	public void adddata() {
+	public void addclass(Objects o) {
+		classes.add(o);
+	}
+	
+    public void addrelationship(Relationship r) {
+		rs.add(r);
+	}
+
+	public Objects readclass(int index) {
+       return classes.get(index);
+	}
+	
+	public Relationship readrelationship(int index) {
+	       return rs.get(index);
+	}
+	
+	
+	public int getclasssize() {
+	       return classes.size();
+		}
 		
-	}
-	public void readdata(String fname) {
-       
-	}
+	public int getrelationshipsize() {
+		       return rs.size();
+		}
 	
 	public void cleardata() {
 		classes.clear();

@@ -8,20 +8,21 @@ public class FileOperations {
 	
 	public void tofile(String fname) {
 		try {
+	    Storage bb=Storage.getInstance();
 		FileWriter writer = new FileWriter(fname); 
 		String str;
 		int i;
 		writer.write("Classes"+System.lineSeparator());
-		for(i=0;i<classes.size();i++) {
+		for(i=0;i<bb.getclasssize();i++) {
 			
-			str=classes.get(i).toString();
+			str=bb.readclass(i).toString();
 			
 		    writer.write(str + System.lineSeparator());
 		}
 		writer.write("Relationships"+System.lineSeparator());
-		for(i=0;i<rs.size();i++) {
+		for(i=0;i<bb.getrelationshipsize();i++) {
 			
-			str=rs.get(i).toString();
+			str=bb.readrelationship(i).toString();
 		    writer.write(str + System.lineSeparator());
 		}
 		
@@ -36,7 +37,7 @@ public class FileOperations {
 	
 	public void fromfile(String fname) {
 	       try {
-				
+				Storage bb=Storage.getInstance();
 				File myObj = new File(fname);
 			    Scanner myReader = new Scanner(myObj);
 			    int i=0;
@@ -48,7 +49,7 @@ public class FileOperations {
 			        	break;
 			        String[] s=line.split(",",3);
 			        Objects o=new Objects(s[0],Double.parseDouble(s[1]),Double.parseDouble(s[2]));
-			        classes.add(o);
+			        bb.addclass(o);
 			        
 			        i++;
 			        
@@ -70,7 +71,7 @@ public class FileOperations {
 			        default:
 			        	r=new UndirectedAssociation(s[1],s[2]);
 			        }
-			        rs.add(r);
+			        bb.addrelationship(r);
 			        
 			        
 			    }
