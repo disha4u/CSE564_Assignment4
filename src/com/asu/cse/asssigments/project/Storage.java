@@ -60,7 +60,7 @@ public class Storage extends Observable implements Observer {
 		}
 	}
 	public void fromfile(String fname) {
-try {
+       try {
 			
 			File myObj = new File(fname);
 		    Scanner myReader = new Scanner(myObj);
@@ -81,7 +81,19 @@ try {
 		        String line = myReader.nextLine();
 		        String[] s=line.split(",",3);
 		        Relationship r;
-		        
+		        switch(s[0]) {
+		        case "Inheritance":
+		        	r=new Inheritance(s[1],s[2]);
+		        	break;
+		        case "Composition":
+		        	r=new Composition(s[1],s[2]);
+		        	break;
+		        case "Association":
+		        	r=new Inheritance(s[1],s[2]);
+		        	break;
+		        default:
+		        	r=new UndirectedAssociation(s[1],s[2]);
+		        }
 		        rs.add(r);
 		        
 		    }
@@ -94,6 +106,11 @@ try {
 		catch(Exception e) {
 			
 		}
+	}
+	
+	public void New() {
+		classes.clear();
+		rs.clear();
 	}
     
 }

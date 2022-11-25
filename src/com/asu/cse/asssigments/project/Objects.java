@@ -2,7 +2,7 @@ package com.asu.cse.asssigments.project;
 public class Objects {
      String name;
      double xcoor,ycoor;
-     public void Objects(String s,double x,double y){
+     public Objects(String s,double x,double y){
     	 
 	     this.name=s;
 	     this.xcoor=x;

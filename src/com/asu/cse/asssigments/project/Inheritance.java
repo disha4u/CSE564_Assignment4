@@ -1,7 +1,7 @@
 package com.asu.cse.asssigments.project;
 public class Inheritance extends RelationshipDecorator {
 
-	public void Inheritance(String c1,String c2){
+	public Inheritance(String c1,String c2){
 		name="Inheritance";
 		class1=c1;
 		class2=c2;
