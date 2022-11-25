@@ -1,11 +1,9 @@
 package com.asu.cse.asssigments.project;
-public class CompositionHandler extends ConcreteHandler{
-
-	
+public class InheritanceHandler extends ConcreteHandler {
+ protected Handler successor;
 	@Override
 	public String getSourceCode(Relationship r) {
 		// TODO Auto-generated method stub
-//		if("")
-		return "";
+		return null;
 	}
 }
