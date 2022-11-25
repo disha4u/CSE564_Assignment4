@@ -8,7 +8,7 @@ class ConcreteHandler implements Handler
 		this.successor=successor;
 	}
 	@Override
-	public String getSourceCode(Relationship r) {
+	public String getSourceCode(Relationship r,String sourceCode) {
 		// TODO Auto-generated method stub
 		return null;
 	}
