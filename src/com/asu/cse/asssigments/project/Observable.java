@@ -7,7 +7,7 @@ import java.util.*;
 *@author Harshit 
 */
 public abstract class Observable  {
-	private List<Observer> observers=new ArrayList<Observer>();
+	protected List<Observer> observers=new ArrayList<Observer>();
 	
 	/**
 	* Notifies Observers the current state
