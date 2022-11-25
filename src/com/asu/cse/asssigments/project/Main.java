@@ -33,8 +33,6 @@ public class Main extends JFrame  {
 		JScrollPane taScroll = new JScrollPane(writable);
 		drawable.setPreferredSize(new Dimension(preferred.width/2,preferred.height));
 		writable.setPreferredSize(new Dimension(preferred.width/2,preferred.height));
-//		drawable.setMinimumSz(new Dimension(400,400));
-//		writable.setPreferredSize(new Dimension(400,400));
 		StatusBar statusBar=new StatusBar();
 		statusBar.setPreferredSize(new Dimension(preferred.width,50));
 		JMenu fileOption = new JMenu("File");
@@ -54,8 +52,6 @@ public class Main extends JFrame  {
         pack();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-		
-	
     }
 
 
@@ -66,8 +62,9 @@ public class Main extends JFrame  {
 	public static void main(String[] args)
 	{
 		Main m=new Main();
-		
-		
+		TextPanel textPanel = new TextPanel();
+		Storage storage = Storage.getInstance();
+		textPanel.run();
 	}
 	
 

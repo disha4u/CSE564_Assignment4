@@ -19,7 +19,9 @@ public class Storage extends Observable implements Runnable {
 	*/
 	protected Storage()
 	{
-		
+		Objects currentClass = new Objects("A",20,20);
+		classes = new ArrayList<Objects>();
+		classes.add(currentClass);
 	}
 	
 	/**

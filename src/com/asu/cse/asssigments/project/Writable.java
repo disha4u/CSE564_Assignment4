@@ -4,10 +4,8 @@ import java.awt.Color;
 import javax.swing.JTextArea;
 
 public class Writable extends JTextArea{
-	Writable()
-	{
+	Writable(){
 //		setBackground(Color.BLUE);
 		super("kjbkjrgfbkjdfgkjfdsdf aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 	}
-
 }
