@@ -1,6 +1,6 @@
 import javax.swing.JPanel;
 
-public class StatusPanel extends JPanel implements Observer {
+public class StatusBar extends JPanel implements Observer {
 
 	@Override
 	public void Update(Observable o) {
