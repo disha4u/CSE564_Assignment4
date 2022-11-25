@@ -49,7 +49,7 @@ public abstract class Relationship {
  	/**
  	 * @return name of class2
  	 */
- 	public String gety() {
+ 	public String getclass2() {
  		return class2;
  	}
 	
