@@ -12,7 +12,7 @@ public class CompositionHandler extends ConcreteHandler{
 			indexclass1=sourceCode.indexOf("class"+" "+r.getclass1());
 			brace=sourceCode.indexOf("{",indexclass1);
 		    
-		    sourceCode=sourceCode.join("\n"+r.getclass2(),sourceCode.substring(0,brace),sourceCode.substring(brace,sourceCode.length()-1) );
+		    sourceCode=sourceCode.join(r.getclass2()+"\n",sourceCode.substring(0,brace+2),sourceCode.substring(brace+2,sourceCode.length()-1) );
 		       
 	    }
 		return sourceCode;
