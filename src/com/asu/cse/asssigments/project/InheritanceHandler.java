@@ -16,7 +16,7 @@ public class InheritanceHandler extends ConcreteHandler {
 					{
 					    int extendsIndex=sourceCode.indexOf("extends",index)+"extends".length()+1;
 					    
-					      sourceCode=sourceCode.substring(0,extendsIndex)+r.class2+","+sourceCode.substring(extendsIndex,sourceCode.length());
+					    sourceCode=sourceCode.substring(0,extendsIndex)+r.class2+","+sourceCode.substring(extendsIndex,sourceCode.length());
 					    
 					    
 					    //sourceCode=sourceCode.substring(0,)
