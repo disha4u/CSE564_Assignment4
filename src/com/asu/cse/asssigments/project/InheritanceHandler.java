@@ -4,19 +4,23 @@ public class InheritanceHandler extends ConcreteHandler {
 	@Override
 	public String getSourceCode(Relationship r,String sourceCode) {  
 		// TODO Auto-generated method stub
-		if(r.name.toLowerCase().equals("inheritance"))
+		if(r.getname().toLowerCase().equals("inheritance"))
 		{ 
 			 
 			        // System.out.println("Hello, World!");
 			    //   	String sourceCode="class A \n{\n}\n";// extends B,C\n{\n}";
 			       	System.out.println(sourceCode);
-			       	int index=sourceCode.indexOf("class"+" "+r.class1);
+			       	int index=sourceCode.indexOf("class"+" "+r.getclass1());
 					String beforBrace= sourceCode.substring(index,sourceCode.indexOf("{",index));
 					if(beforBrace.contains("extends"))
 					{
 					    int extendsIndex=sourceCode.indexOf("extends",index)+"extends".length()+1;
 					    
+<<<<<<< HEAD
 					    sourceCode=sourceCode.substring(0,extendsIndex)+r.class2+","+sourceCode.substring(extendsIndex,sourceCode.length());
+=======
+					      sourceCode=sourceCode.substring(0,extendsIndex)+r.getclass2()+","+sourceCode.substring(extendsIndex,sourceCode.length());
+>>>>>>> b86c680a7f151244ef063bbf5a948cd66ad4097f
 					    
 					    
 					    //sourceCode=sourceCode.substring(0,)
@@ -24,7 +28,7 @@ public class InheritanceHandler extends ConcreteHandler {
 					else
 					{   
 					    int braceIndex=sourceCode.indexOf("{",index);
-					    sourceCode=sourceCode.substring(0,braceIndex-2)+" extends "+r.class2;
+					    sourceCode=sourceCode.substring(0,braceIndex-2)+" extends "+r.getclass2();
 					    
 					}
 				//	System.out.println(index+" "+beforBrace);
