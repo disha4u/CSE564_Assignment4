@@ -3,7 +3,23 @@ public class AssociationHandler implements Handler{
 
 	@Override
 	public String getSourceCode(Relationship r,String sourceCode) {
-		return "";
+		String s[];
+		int indexclass1,brace;
+		
+		indexclass1=sourceCode.indexOf("class"+" "+r.getclass1());
+			
+		brace=sourceCode.indexOf("}",indexclass1);
+		String classstr=sourceCode.substring(indexclass1,brace);
+		if (classstr.contains("method()")) {
+			int ind=sourceCode.indexOf("method()");
+			sourceCode=sourceCode.join(r.getclass2()+"\n",sourceCode.substring(0,ind+9),sourceCode.substring(brace+9,sourceCode.length()));
+		}
+		else {    
+		sourceCode=sourceCode.join("method(){\n"+r.getclass2()+"\n",sourceCode.substring(0,brace+2),sourceCode.substring(brace+2,sourceCode.length()) );
+		       
+		}
+		return sourceCode;
+		
 	}
 
 }
