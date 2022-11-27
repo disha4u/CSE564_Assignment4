@@ -58,6 +58,8 @@ public class Storage extends Observable implements Runnable {
 		}
 		
 	public int getrelationshipsize() {
+		if(rs==null)
+			return 0;
 		       return rs.size();
 		}
 	

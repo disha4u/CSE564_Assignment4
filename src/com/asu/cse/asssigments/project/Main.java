@@ -65,6 +65,8 @@ public class Main extends JFrame  {
 		Main m=new Main();
 		TextPanel textPanel = new TextPanel(m.writable);
 		Storage storage = Storage.getInstance();
+		FileOperations fr=new FileOperations();
+		fr.fromfile("dummydata.txt");
 		textPanel.run();
 	}
 	
