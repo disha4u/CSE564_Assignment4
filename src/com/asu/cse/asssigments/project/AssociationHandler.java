@@ -12,10 +12,10 @@ public class AssociationHandler implements Handler{
 		String classstr=sourceCode.substring(indexclass1,brace);
 		if (classstr.contains("method()")) {
 			int ind=sourceCode.indexOf("method()");
-			sourceCode=sourceCode.join(r.getclass2()+"\n",sourceCode.substring(0,ind+9),sourceCode.substring(brace+9,sourceCode.length()));
+			sourceCode=sourceCode.join(r.getclass2()+"\n",sourceCode.substring(0,ind+10),sourceCode.substring(ind+10,sourceCode.length()));
 		}
 		else {    
-		sourceCode=sourceCode.join("method(){\n"+r.getclass2()+"\n",sourceCode.substring(0,brace+2),sourceCode.substring(brace+2,sourceCode.length()) );
+		sourceCode=sourceCode.join("\nmethod(){\n"+r.getclass2(),sourceCode.substring(0,brace-1),sourceCode.substring(brace-1,sourceCode.length()) );
 		       
 		}
 		return sourceCode;
