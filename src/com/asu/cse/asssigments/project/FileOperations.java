@@ -36,21 +36,28 @@ public class FileOperations {
 	
 	
 	public void fromfile(String fname) {
+		System.out.println("hi1");
 	       try {
 				Storage bb=Storage.getInstance();
 				File myObj = new File(fname);
 			    Scanner myReader = new Scanner(myObj);
 			    int i=0;
 			    while (myReader.hasNextLine()) {
+			    	System.out.println("hi2");
 			        String line = myReader.nextLine();
-			        if(i==0)
+			        if(i==0) {
+			        	i++;
 			        	continue;
+			        }
 			        if(line.startsWith("Relationships"))
 			        	break;
+			        System.out.println("hi3");
 			        String[] s=line.split(",",3);
 			        Objects o=new Objects(s[0],Double.parseDouble(s[1]),Double.parseDouble(s[2]));
+			        System.out.println("hi4");
 			        bb.addclass(o);
-			        
+			        System.out.println("hi5");
+			        System.out.println(o.toString());
 			        i++;
 			        
 			    }
@@ -82,7 +89,7 @@ public class FileOperations {
 			
 			}
 			catch(Exception e) {
-				
+				System.out.println("file not found "+fname);
 			}
 		}
 		

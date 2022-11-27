@@ -63,10 +63,11 @@ public class Main extends JFrame  {
 	public static void main(String[] args)
 	{
 		Main m=new Main();
+		FileOperations fr=new FileOperations();
+		fr.fromfile("C:\\Users\\Disha\\Desktop\\cse564sd\\CSE564_Assignment4\\src\\dummydata.txt");
 		TextPanel textPanel = new TextPanel(m.writable);
 		Storage storage = Storage.getInstance();
-		FileOperations fr=new FileOperations();
-		fr.fromfile("dummydata.txt");
+		
 		textPanel.run();
 	}
 	
