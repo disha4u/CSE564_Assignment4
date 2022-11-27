@@ -54,6 +54,8 @@ public class Storage extends Observable implements Runnable {
 	
 	
 	public int getclasssize() {
+		if(classes==null)
+			return 0;
 	       return classes.size();
 		}
 		
