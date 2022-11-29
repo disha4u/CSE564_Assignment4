@@ -69,5 +69,6 @@ public class Storage extends Observable{
 	public void cleardata() {
 		classes.clear();
 		rs.clear();
+		super.Notify();
 	}
 }

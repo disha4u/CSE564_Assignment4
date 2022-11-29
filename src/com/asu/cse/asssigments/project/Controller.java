@@ -17,6 +17,10 @@ public class Controller implements ActionListener {
 			if(!filePath.equals(null)) {
 				operations.fromfile(filePath);
 			}
-		}	
+		}
+		else if(action.equals("New")) {
+			Storage bb=Storage.getInstance();
+			bb.cleardata();
+		}
 	}
 }
