@@ -9,7 +9,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class FileOperations {
 	
-	public String getFilePath() {
+	public File getFilePath() {
         System.out.println("Here");
 		try{
         	JFileChooser jFileChooser = new JFileChooser();
@@ -17,9 +17,9 @@ public class FileOperations {
             jFileChooser.addChoosableFileFilter(filter);
             jFileChooser.showOpenDialog(null);
             File file = jFileChooser.getSelectedFile();
-            return(file.getPath());
+            return(file);
         }catch(Exception e) {
-        	return "Error While Reading File";
+        	return null;
         }
 	}
 	
@@ -52,12 +52,12 @@ public class FileOperations {
 	}
 	
 	
-	public void fromfile(String fname) {
+	public void fromfile(File file) {
 		System.out.println("hi1");
 	       try {
 				Storage bb=Storage.getInstance();
-				File myObj = new File(fname);
-			    Scanner myReader = new Scanner(myObj);
+				//File myObj = new File(fname);
+			    Scanner myReader = new Scanner(file);
 			    int i=0;
 			    while (myReader.hasNextLine()) {
 			    	System.out.println("hi2");
@@ -106,7 +106,7 @@ public class FileOperations {
 			
 			}
 			catch(Exception e) {
-				System.out.println("file not found "+fname);
+				System.out.println("file not found ");
 			}
 		}
 		
