@@ -87,7 +87,7 @@ public class FileOperations {
 			        	r=new Composition(s[0],s[1]);
 			        	break;
 			        case "Association":
-			        	r=new Inheritance(s[0],s[1]);
+			        	r=new Association(s[0],s[1]);
 			        	break;
 			        default:
 			        	r=new UndirectedAssociation(s[0],s[1]);

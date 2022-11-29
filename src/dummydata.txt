@@ -7,4 +7,5 @@ cucumber,44,44
 Relationships
 sandwich,patty,Composition
 sandwich,tomato,Composition
+veggies,tomato,Association
 veggies,tomato,Inheritance

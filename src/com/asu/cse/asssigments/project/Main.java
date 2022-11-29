@@ -75,7 +75,7 @@ public class Main extends JFrame  {
 		TextPanel textPanel = new TextPanel(m.writable);
 		Storage storage = Storage.getInstance();
 		Storage.getInstance().addObservers(textPanel);
-		textPanel.run();
+//		textPanel.run();
 	}
 	
 

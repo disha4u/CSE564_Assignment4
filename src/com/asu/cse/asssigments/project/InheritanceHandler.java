@@ -9,7 +9,7 @@ public class InheritanceHandler extends ConcreteHandler {
 			 
 			        // System.out.println("Hello, World!");
 			    //   	String sourceCode="class A \n{\n}\n";// extends B,C\n{\n}";
-			       	System.out.println(sourceCode);
+			       	System.out.println(r.getname());
 			       	int index=sourceCode.indexOf("class"+" "+r.getclass1());
 					String beforBrace= sourceCode.substring(index,sourceCode.indexOf("{",index));
 					System.out.println("beforBrace "+beforBrace);
@@ -32,7 +32,8 @@ public class InheritanceHandler extends ConcreteHandler {
 					    
 					}
 				//	System.out.println(index+" "+beforBrace);
-				    System.out.println("Inheritance "+sourceCode);	
+
+
 			    
 		}
 		else

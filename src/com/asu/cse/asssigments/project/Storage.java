@@ -19,10 +19,10 @@ public class Storage extends Observable{
 	*/
 	protected Storage()
 	{
-		Objects currentClass = new Objects("A",20,20);
+//		Objects currentClass = new Objects("A",20,20);
 		classes = new ArrayList<Objects>();
 		rs = new ArrayList<Relationship>();
-		classes.add(currentClass);
+//		classes.add(currentClass);
 	}
 	
 	/**
