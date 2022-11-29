@@ -4,7 +4,24 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.Scanner;
 
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 public class FileOperations {
+	
+	public String getFilePath() {
+        System.out.println("Here");
+		try{
+        	JFileChooser jFileChooser = new JFileChooser();
+        	FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV Files", "csv");
+            jFileChooser.addChoosableFileFilter(filter);
+            jFileChooser.showOpenDialog(null);
+            File file = jFileChooser.getSelectedFile();
+            return(file.getPath());
+        }catch(Exception e) {
+        	return "Error While Reading File";
+        }
+	}
 	
 	public void tofile(String fname) {
 		try {

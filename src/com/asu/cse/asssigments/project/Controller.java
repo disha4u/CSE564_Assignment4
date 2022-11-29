@@ -10,7 +10,15 @@ public class Controller implements ActionListener {
 		String action = e.getActionCommand();
 		FileOperations operations = new FileOperations();
 		if(action.equals("Save")) {
-			operations.tofile("Text.txt");
+			//String filePath = operations.getFilePath();
+			//if(!filePath.equals("Error While Reading File")) {
+			operations.tofile("Save.txt");
+		//}
+		} else if(action.equals("Load")) {
+			String filePath = operations.getFilePath();
+			if(!filePath.equals("Error While Reading File")) {
+				operations.fromfile(filePath);
+			}
 		}
 		
 	}

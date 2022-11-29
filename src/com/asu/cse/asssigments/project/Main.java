@@ -39,9 +39,16 @@ public class Main extends JFrame  {
 		JMenu fileOption = new JMenu("File");
 		JMenu helpOption = new JMenu("Help");
 		JMenuBar menuBar = new JMenuBar();
-		fileOption.add(new JMenuItem("New"));
-		fileOption.add(new JMenuItem("Save"));
-		fileOption.add(new JMenuItem("Load"));
+		JMenuItem subMenu1=new JMenuItem("New");
+        JMenuItem subMenu2=new JMenuItem("Load");  
+        JMenuItem subMenu3=new JMenuItem("Save");  
+		fileOption.add(subMenu1);
+		fileOption.add(subMenu2);
+		fileOption.add(subMenu3);
+		Controller controller = new Controller();
+		subMenu1.addActionListener(controller);
+        subMenu2.addActionListener(controller);
+        subMenu3.addActionListener(controller);
         menuBar.add(fileOption);
         menuBar.add(helpOption);
         add(menuBar,BorderLayout.NORTH);
@@ -63,8 +70,8 @@ public class Main extends JFrame  {
 	public static void main(String[] args)
 	{
 		Main m=new Main();
-		FileOperations fr=new FileOperations();
-		fr.fromfile("C:\\Users\\Disha\\Desktop\\cse564sd\\CSE564_Assignment4\\src\\dummydata.txt");
+		//FileOperations fr=new FileOperations();
+		//fr.fromfile("C:\\Users\\Disha\\Desktop\\cse564sd\\CSE564_Assignment4\\src\\dummydata.txt");
 		TextPanel textPanel = new TextPanel(m.writable);
 		Storage storage = Storage.getInstance();
 		
