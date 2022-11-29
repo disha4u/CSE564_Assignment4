@@ -12,6 +12,7 @@ public class InheritanceHandler extends ConcreteHandler {
 			       	System.out.println(sourceCode);
 			       	int index=sourceCode.indexOf("class"+" "+r.getclass1());
 					String beforBrace= sourceCode.substring(index,sourceCode.indexOf("{",index));
+					System.out.println("beforBrace "+beforBrace);
 					if(beforBrace.contains("extends"))
 					{
 					    int extendsIndex=sourceCode.indexOf("extends",index)+"extends".length()+1;
@@ -26,11 +27,12 @@ public class InheritanceHandler extends ConcreteHandler {
 					else
 					{   
 					    int braceIndex=sourceCode.indexOf("{",index);
-					    sourceCode=sourceCode.substring(0,braceIndex-2)+" extends "+r.getclass2();
+					    System.out.println("braceIndex "+braceIndex);
+					    sourceCode=sourceCode.substring(0,braceIndex)+" extends "+r.getclass2()+sourceCode.substring(braceIndex-1, sourceCode.length());
 					    
 					}
 				//	System.out.println(index+" "+beforBrace);
-				    System.out.println(sourceCode);	
+				    System.out.println("Inheritance "+sourceCode);	
 			    
 		}
 		else
