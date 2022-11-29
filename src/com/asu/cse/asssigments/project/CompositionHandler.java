@@ -10,8 +10,9 @@ public class CompositionHandler extends ConcreteHandler{
     	if(r.getname().toLowerCase().equals("composition"))
 		{
 			indexclass1=sourceCode.indexOf("class"+" "+r.getclass1());
+			System.out.println(r.getclass1());
 			brace=sourceCode.indexOf("{",indexclass1);
-		    
+		    System.out.println(indexclass1);
 		    sourceCode=sourceCode.join(r.getclass2()+"\n",sourceCode.substring(0,brace+2),sourceCode.substring(brace+2,sourceCode.length()) );
 		       
 	    }

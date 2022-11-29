@@ -57,7 +57,7 @@ public class FileOperations {
 			    Scanner myReader = new Scanner(file);
 			    int i=0;
 			    while (myReader.hasNextLine()) {
-			    	System.out.println("hi2");
+			    	
 			        String line = myReader.nextLine();
 			        if(i==0) {
 			        	i++;
@@ -65,13 +65,13 @@ public class FileOperations {
 			        }
 			        if(line.startsWith("Relationships"))
 			        	break;
-			        System.out.println("hi3");
+			   
 			        String[] s=line.split(",",3);
 			        Objects o=new Objects(s[0],Double.parseDouble(s[1]),Double.parseDouble(s[2]));
-			        System.out.println("hi4");
+			        
 			        bb.addclass(o);
-			        System.out.println("hi5");
-			        System.out.println(o.toString());
+			        
+			        
 			        i++;
 			        
 			    }
@@ -92,10 +92,9 @@ public class FileOperations {
 			        default:
 			        	r=new UndirectedAssociation(s[0],s[1]);
 			        }
-			        System.out.println(r);
-			        System.out.println(s[0]);
+			       
 			        bb.addrelationship(r);
-			        System.out.print("Added Relationship");
+			       
 			    }
 			    myReader.close();
 			}

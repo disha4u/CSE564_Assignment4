@@ -29,7 +29,7 @@ public class TextPanel implements Observer,Runnable{
 		for(i=0;i<storage.getclasssize();i++) {
 			Objects currentClass = storage.readclass(i); 
 			String className = currentClass.getname();
-			code+="Class "+ className + "{\n}\n";
+			code+="class "+ className + "{\n}\n";
 		}
 
         for(i=0;i<storage.getrelationshipsize();i++) {
