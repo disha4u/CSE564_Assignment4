@@ -74,7 +74,7 @@ public class Main extends JFrame  {
 		//fr.fromfile("C:\\Users\\Disha\\Desktop\\cse564sd\\CSE564_Assignment4\\src\\dummydata.txt");
 		TextPanel textPanel = new TextPanel(m.writable);
 		Storage storage = Storage.getInstance();
-		
+		Storage.getInstance().addObservers(textPanel);
 		textPanel.run();
 	}
 	
