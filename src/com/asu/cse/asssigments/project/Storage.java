@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 
 
-public class Storage extends Observable implements Runnable {
+public class Storage extends Observable{
 
 	private ArrayList<Objects> classes;
 	private ArrayList<Relationship> rs;
@@ -21,6 +21,7 @@ public class Storage extends Observable implements Runnable {
 	{
 		Objects currentClass = new Objects("A",20,20);
 		classes = new ArrayList<Objects>();
+		rs = new ArrayList<Relationship>();
 		classes.add(currentClass);
 	}
 	
@@ -69,12 +70,4 @@ public class Storage extends Observable implements Runnable {
 		classes.clear();
 		rs.clear();
 	}
-
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
 }

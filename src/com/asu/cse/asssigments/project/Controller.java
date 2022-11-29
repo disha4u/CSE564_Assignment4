@@ -17,8 +17,6 @@ public class Controller implements ActionListener {
 			if(!filePath.equals(null)) {
 				operations.fromfile(filePath);
 			}
-		}
-		
+		}	
 	}
-	
 }

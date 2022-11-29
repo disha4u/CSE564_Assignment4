@@ -42,8 +42,6 @@ public class FileOperations {
 			str=bb.readrelationship(i).toString();
 		    writer.write(str + System.lineSeparator());
 		}
-		
-
 		writer.close();
 		}
 		catch(Exception e) {
@@ -53,7 +51,6 @@ public class FileOperations {
 	
 	
 	public void fromfile(File file) {
-		System.out.println("hi1");
 	       try {
 				Storage bb=Storage.getInstance();
 				//File myObj = new File(fname);
@@ -82,31 +79,28 @@ public class FileOperations {
 			        String line = myReader.nextLine();
 			        String[] s=line.split(",",3);
 			        Relationship r;
-			        switch(s[0]) {
+			        switch(s[2]) {
 			        case "Inheritance":
-			        	r=new Inheritance(s[1],s[2]);
+			        	r=new Inheritance(s[0],s[1]);
 			        	break;
 			        case "Composition":
-			        	r=new Composition(s[1],s[2]);
+			        	r=new Composition(s[0],s[1]);
 			        	break;
 			        case "Association":
-			        	r=new Inheritance(s[1],s[2]);
+			        	r=new Inheritance(s[0],s[1]);
 			        	break;
 			        default:
-			        	r=new UndirectedAssociation(s[1],s[2]);
+			        	r=new UndirectedAssociation(s[0],s[1]);
 			        }
+			        System.out.println(r);
+			        System.out.println(s[0]);
 			        bb.addrelationship(r);
-			        
-			        
+			        System.out.print("Added Relationship");
 			    }
-			    
 			    myReader.close();
-			
-
-			
 			}
 			catch(Exception e) {
-				System.out.println("file not found ");
+				System.out.println("file not found"+e);
 			}
 		}
 		
