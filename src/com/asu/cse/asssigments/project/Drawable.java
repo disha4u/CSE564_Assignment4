@@ -20,8 +20,6 @@ public class Drawable extends JPanel{
 	}
 	public void settxt(String txt) {
 		this.cname=txt;
-		
-		
 	}
 	
 	Drawable()

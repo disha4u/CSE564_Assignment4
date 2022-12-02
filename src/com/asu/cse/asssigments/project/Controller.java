@@ -27,14 +27,14 @@ public class Controller implements ActionListener,MouseListener {
 			if(!filePath.equals(null)) {
 				operations.fromfile(filePath);
 			}
+			DrawRectangle s= new DrawRectangle();
+			s.draw(d);
 		}
 		else if(action.equals("New")) {
 			Storage bb=Storage.getInstance();
 			bb.cleardata();
 		}
 	}
-	
-	
 
 	@Override
 	public void mouseClicked(MouseEvent e) {

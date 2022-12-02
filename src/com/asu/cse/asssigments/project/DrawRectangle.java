@@ -28,6 +28,11 @@ public class DrawRectangle implements Strategy{
 		    d.setxy(x-BoxDimesions.length/2, y-BoxDimesions.width/2);
 		    d.repaint();
 		}
+		
+	}
+	
+	public void draw(Drawable d) {
+		d.repaint();
 	}
 
 	
