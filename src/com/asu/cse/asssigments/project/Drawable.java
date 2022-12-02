@@ -56,7 +56,7 @@ public class Drawable extends JPanel{
 //			}
 //		}	
 		
-		System.out.println("Relation SHip size "+s.getRelationshipSize());
+//		System.out.println("Relation SHip size "+s.getRelationshipSize());
 		for(int i=0;i<s.getRelationshipSize();i++)
 		{	DrawConnections relationship;
 			Relationship r=s.readrelationship(i);
