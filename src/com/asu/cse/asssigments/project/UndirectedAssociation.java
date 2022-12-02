@@ -1,4 +1,7 @@
 package com.asu.cse.asssigments.project;
+
+import java.awt.Graphics;
+
 public class UndirectedAssociation extends Relationship{
 
 	
@@ -9,7 +12,7 @@ public class UndirectedAssociation extends Relationship{
 	}
 	
 	@Override
-	public void draw() {
+	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
 		
 	}

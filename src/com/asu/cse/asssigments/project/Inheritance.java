@@ -1,4 +1,7 @@
 package com.asu.cse.asssigments.project;
+
+import java.awt.Graphics;
+
 public class Inheritance extends RelationshipDecorator {
 
 	public Inheritance(String c1,String c2){
@@ -6,8 +9,9 @@ public class Inheritance extends RelationshipDecorator {
 		class1=c1;
 		class2=c2;
 	}
+
 	@Override
-	public void draw() {
+	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
 		
 	}

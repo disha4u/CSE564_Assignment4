@@ -1,4 +1,7 @@
 package com.asu.cse.asssigments.project;
+
+import java.awt.Graphics;
+
 public abstract class Relationship {
 	
 	String name,class1,class2;
@@ -7,7 +10,7 @@ public abstract class Relationship {
 	* Plots the graph
 	* @param graphics object
 	*/
-	public  abstract void draw();
+	public abstract void draw( Graphics g);
 	
 	/**
  	 * @param name of class1

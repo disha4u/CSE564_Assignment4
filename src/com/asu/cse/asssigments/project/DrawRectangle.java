@@ -26,6 +26,7 @@ public class DrawRectangle implements Strategy{
 			bb.addclass(o);
 		    d.settxt(text);
 		    d.setxy(x-BoxDimesions.length/2, y-BoxDimesions.width/2);
+		    d.repaint();
 		}
 	}
 

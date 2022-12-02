@@ -86,6 +86,7 @@ public class Controller implements ActionListener,MouseListener {
     			if(Math.abs(x-x1)<BoxDimesions.length/2 || Math.abs(y-y1)<BoxDimesions.width/2) {
     				System.out.println("class 2 already exists");
     				// call draw relationship
+    				
     				flag=false;
     				break;
     			}
