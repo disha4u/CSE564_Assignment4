@@ -1,9 +1,9 @@
 Classes
 sandwich,1,2
-patty,11,12
-veggies,21,22
-tomato,32,32
-cucumber,44,44
+patty,100,100
+veggies,210,220
+tomato,50,50
+cucumber,300,300
 Relationships
 sandwich,patty,Composition
 sandwich,tomato,Composition

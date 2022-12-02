@@ -64,6 +64,6 @@ public  class Relationship {
 	
 	@Override
 	public String toString() {
-		return name+","+class1+","+class2;
+		return class1+","+class2+","+name;
 	}
 }

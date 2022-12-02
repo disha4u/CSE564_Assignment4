@@ -17,7 +17,7 @@ public class CompositionHandler extends ConcreteHandler{
 		       
 	    }
 		else{
-			System.out.println("hi compositon else hu main");
+			//System.out.println("hi compositon else hu main");
 			sourceCode=successor.getSourceCode(r, sourceCode);
 		}
 		return sourceCode;

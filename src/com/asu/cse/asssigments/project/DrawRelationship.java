@@ -47,7 +47,7 @@ public class DrawRelationship {
       button3.addActionListener(controller);
       
    
-      JOptionPane.showInputDialog(null,panel);
+      JOptionPane.showMessageDialog(null,panel);
       
   }
 		

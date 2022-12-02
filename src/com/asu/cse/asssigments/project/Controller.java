@@ -43,23 +43,24 @@ public class Controller implements ActionListener,MouseListener {
 		else if(action.equals("Association")) {
 			Relationship r=new Relationship("Association",c1,c2);
 			Storage bb=Storage.getInstance();
-			System.out.println(r.getclass1());
-			System.out.println(r.getclass2());
+			//System.out.println(r.getclass1());
+			//System.out.println(r.getclass2());
 			c1="";
 			c2="";
 			bb.addrelationship(r);
-			
+			d.repaint();
 		}
 		else if(action.equals("Composition")) {
 			Relationship r=new Relationship("Composition",c1,c2);
 			Storage bb=Storage.getInstance();
 			bb.addrelationship(r);
-			
+			d.repaint();
 		}
 		else if(action.equals("Inheritance")) {
 			Relationship r=new Relationship("Inheritance",c1,c2);
 			Storage bb=Storage.getInstance();
 			bb.addrelationship(r);
+			d.repaint();
 		}
 		
 	}
