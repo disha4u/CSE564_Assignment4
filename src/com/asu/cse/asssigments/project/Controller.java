@@ -1,10 +1,16 @@
 package com.asu.cse.asssigments.project;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 
-public class Controller implements ActionListener {
+public class Controller extends MouseAdapter implements ActionListener {
+	
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -21,6 +27,31 @@ public class Controller implements ActionListener {
 		else if(action.equals("New")) {
 			Storage bb=Storage.getInstance();
 			bb.cleardata();
+		}
+	}
+	
+	public void mouseclicked(MouseEvent e) {
+		double x,y;
+		x=e.getX();
+		y=e.getY();
+		
+		
+		Strategy s;
+		
+		s= new DrawRectangle();
+		
+		
+		
+		
+		s.draw(null, 0, 0);
+		
+		Storage bb=Storage.getInstance();
+		
+        for(int i=0;i<bb.getclasssize();i++) {
+			
+			bb.readclass(i);
+			
+		    
 		}
 	}
 }

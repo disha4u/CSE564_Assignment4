@@ -55,6 +55,7 @@ public class Main extends JFrame  {
         add(drawable,BorderLayout.CENTER);
         add(taScroll,BorderLayout.WEST);
         add(statusBar,BorderLayout.SOUTH);
+        drawable.addMouseListener(controller);
         setTitle("CSE564 Final Project");
 		setPreferredSize(preferred);
         pack();
