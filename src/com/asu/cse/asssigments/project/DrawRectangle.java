@@ -19,11 +19,14 @@ public class DrawRectangle implements Strategy{
 		//graphics.setColor(Color.RED);
 		
 		String text = (String) JOptionPane.showInputDialog("Enter name:");
-		Objects o=new Objects(text,x,y);
-		Storage bb=Storage.getInstance();
-		bb.addclass(o);
-		d.settxt(text);
-		d.setxy(x-BoxDimesions.length/2, y-BoxDimesions.width/2);
+		
+		if(text!=null) {
+			Objects o=new Objects(text,x,y);
+			Storage bb=Storage.getInstance();
+			bb.addclass(o);
+		    d.settxt(text);
+		    d.setxy(x-BoxDimesions.length/2, y-BoxDimesions.width/2);
+		}
 	}
 
 	

@@ -30,8 +30,8 @@ public class Drawable extends JPanel{
 	
 	
 	public void paintComponent(Graphics g) {
-		System.out.println("pc "+x);
-		System.out.println("pc "+y);
+		//System.out.println("pc "+x);
+		//System.out.println("pc "+y);
 		Graphics2D graphics = (Graphics2D) g.create();
 		graphics.setColor(Color.GREEN);
 		graphics.fill(new Rectangle2D.Double(x, y,BoxDimesions.length, BoxDimesions.width));
