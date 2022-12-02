@@ -6,12 +6,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.File;
 
-public class Controller extends MouseAdapter implements ActionListener {
+public class Controller implements ActionListener,MouseListener {
+	 Drawable d;
 	
-	
-
+    Controller(Drawable d){
+    	this.d=d;
+    }
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String action = e.getActionCommand();
@@ -30,7 +33,10 @@ public class Controller extends MouseAdapter implements ActionListener {
 		}
 	}
 	
-	public void mouseclicked(MouseEvent e) {
+	
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
 		double x,y;
 		x=e.getX();
 		y=e.getY();
@@ -40,10 +46,12 @@ public class Controller extends MouseAdapter implements ActionListener {
 		
 		s= new DrawRectangle();
 		
-		
-		
-		
-		s.draw(null, 0, 0);
+		//Drawable d=(Drawable)e.getSource();
+		System.out.println(e);
+		System.out.println("controller "+x+" "+y);
+		s.draw(d,x,y);
+		//d.repaint();
+		//s.draw();
 		
 		Storage bb=Storage.getInstance();
 		
@@ -53,5 +61,31 @@ public class Controller extends MouseAdapter implements ActionListener {
 			
 		    
 		}
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
