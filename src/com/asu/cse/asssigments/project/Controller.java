@@ -13,9 +13,8 @@ public class Controller implements ActionListener,MouseListener {
 	 Drawable d;
 	 static String c1,c2;
 	 static int clickNumber = 0;
-	//double startx,starty;
-	//boolean flag = false;
-    Controller(Drawable d){
+
+	 Controller(Drawable d){
     	this.d=d;
     }
     
@@ -43,24 +42,19 @@ public class Controller implements ActionListener,MouseListener {
 		else if(action.equals("Association")) {
 			Relationship r=new Relationship("Association",c1,c2);
 			Storage bb=Storage.getInstance();
-			//System.out.println(r.getclass1());
-			//System.out.println(r.getclass2());
 			c1="";
 			c2="";
 			bb.addrelationship(r);
-			//d.repaint();
 		}
 		else if(action.equals("Composition")) {
 			Relationship r=new Relationship("Composition",c1,c2);
 			Storage bb=Storage.getInstance();
 			bb.addrelationship(r);
-			//d.repaint();
 		}
 		else if(action.equals("Inheritance")) {
 			Relationship r=new Relationship("Inheritance",c1,c2);
 			Storage bb=Storage.getInstance();
 			bb.addrelationship(r);
-			//d.repaint();
 		}
 		
 	}
@@ -91,7 +85,6 @@ public class Controller implements ActionListener,MouseListener {
 			result = evaluator.evaluateCollision(x, y);
 			if(result.length() != 0) {
 				System.out.println(result+" Class 2 exists");
-				//Draw Relationship
 				c2=result;
 				DrawRelationship dr=new DrawRelationship();
                 dr.draw();
