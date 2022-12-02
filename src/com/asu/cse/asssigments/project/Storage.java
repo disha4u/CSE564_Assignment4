@@ -66,6 +66,16 @@ public class Storage extends Observable{
 		       return rs.size();
 		}
 	
+	public void modifyclass(String name,double x,double y) {
+      for(int i=0;i<classes.size();i++) {
+			
+			if(classes.get(i).getname().equals(name)) {
+				classes.get(i).setx(x);
+				classes.get(i).sety(y);
+			}
+		}
+	}
+	
 	public void cleardata() {
 		classes.clear();
 		rs.clear();
