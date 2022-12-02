@@ -51,6 +51,8 @@ public class Controller implements ActionListener,MouseListener {
 			}
 			else {
 				DrawRectangle s= new DrawRectangle();
+				startx=x;
+				starty=y;
 				s.draw(d, x, y);
 				clickNumber+=1;
 			}
@@ -60,6 +62,8 @@ public class Controller implements ActionListener,MouseListener {
 			if(result == true) {
 				System.out.println("Class 2 exists");
 				//Draw Relationship
+//				if("")
+				
 				clickNumber = 0;
 			}
 		}

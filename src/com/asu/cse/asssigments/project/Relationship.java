@@ -2,15 +2,21 @@ package com.asu.cse.asssigments.project;
 
 import java.awt.Graphics;
 
-public abstract class Relationship {
+public  class Relationship {
 	
-	String name,class1,class2;
+	String name, class1,class2;
 
 	/**
 	* Plots the graph
 	* @param graphics object
 	*/
-	public abstract void draw( Graphics g);
+	Relationship(String name,String class1,String class2)
+	{
+		this.name=name;
+		this.class1=class1;
+		this.class2=class2;
+	}
+//	public abstract void draw( Graphics g);
 	
 	/**
  	 * @param name of class1

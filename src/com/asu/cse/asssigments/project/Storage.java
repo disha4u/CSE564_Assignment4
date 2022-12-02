@@ -81,6 +81,12 @@ public class Storage extends Observable{
 			}
 		}
 	}
+	public int getRelationshipSize()
+	{
+		if(rs==null)
+			return 0;
+		return this.rs.size();
+	}
 	
 	public void cleardata() {
 		classes.clear();

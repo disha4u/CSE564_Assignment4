@@ -1,2 +1,9 @@
 Classes
+ABC,240.0,188.0
+DEF,742.0,172.0
+sandwich,391.0,385.0
+patty,328.0,409.0
+veggies,846.0,363.0
+tomato,508.0,589.0
+cucumber,636.0,322.0
 Relationships

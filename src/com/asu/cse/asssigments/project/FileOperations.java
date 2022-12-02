@@ -79,19 +79,20 @@ public class FileOperations {
 			        String line = myReader.nextLine();
 			        String[] s=line.split(",",3);
 			        Relationship r;
-			        switch(s[2]) {
-			        case "Inheritance":
-			        	r=new Inheritance(s[0],s[1]);
-			        	break;
-			        case "Composition":
-			        	r=new Composition(s[0],s[1]);
-			        	break;
-			        case "Association":
-			        	r=new Association(s[0],s[1]);
-			        	break;
-			        default:
-			        	r=new UndirectedAssociation(s[0],s[1]);
-			        }
+			        r=new Relationship(s[2],s[0],s[1]);
+//			        switch(s[2]) {
+//			        case "Inheritance":
+//			        	r=new Relationship(s[0],s[1]);
+//			        	break;
+//			        case "Composition":
+//			        	r=new Composition(s[0],s[1]);
+//			        	break;
+//			        case "Association":
+//			        	r=new Association(s[0],s[1]);
+//			        	break;
+//			        default:
+//			        	r=new UndirectedAssociation(s[0],s[1]);
+//			        }
 			       
 			        bb.addrelationship(r);
 			       
