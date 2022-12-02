@@ -55,16 +55,22 @@ public class Storage extends Observable{
 	
 	
 	public int getclasssize() {
-		if(classes==null)
+		if(classes==null) {
 			return 0;
-	       return classes.size();
 		}
+		else{
+			return classes.size();
+		}
+	}
 		
 	public int getrelationshipsize() {
-		if(rs==null)
+		if(rs==null) {
 			return 0;
-		       return rs.size();
 		}
+		else{
+			return rs.size();
+		}
+	}
 	
 	public void modifyclass(String name,double x,double y) {
       for(int i=0;i<classes.size();i++) {

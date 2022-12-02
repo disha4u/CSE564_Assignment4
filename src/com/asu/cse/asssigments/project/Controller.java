@@ -38,66 +38,65 @@ public class Controller implements ActionListener,MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		double x,y;
-		x=e.getX();
+		double x, y; 
+		x=e.getX(); 
 		y=e.getY();
-		
-		
-		Strategy s;
-		
-		
-		//d.repaint();
-		//s.draw();
-		
-		Storage bb=Storage.getInstance();
-		double x1,y1;
-		int f=0;
-		if(flag == false)
-		{
-			for(int i=0;i<bb.getclasssize();i++) {
-				
-				x1=bb.readclass(i).getx();
-				y1=bb.readclass(i).gety();
-				if(Math.abs(x-x1)<BoxDimesions.length/2 || Math.abs(y-y1)<BoxDimesions.width/2) {
-					System.out.println("class already exists");
-					flag=true;
-					f=1;
-					startx=x;
-					starty=y;
-					break;
-				}
-				
+		Evaluator evaluator = new Evaluator();
+		int clickNumber = 0;
+		boolean result;
+		if(clickNumber==0) {
+			result = evaluator.evaluateCollision(x, y);
+			if(result == true) {
+				System.out.println("Class exists");
 			}
-			if(f==0) {
-			s= new DrawRectangle();
-    		
-    		//Drawable d=(Drawable)e.getSource();
-    		System.out.println(e);
-    		
-    		System.out.println("controller "+x+" "+y);
-    		s.draw(d,x,y);
+			else {
+				DrawRectangle s= new DrawRectangle();
+				s.draw(d, x, y);
+				clickNumber+=1;
 			}
 		}
-		else {
-            for(int i=0;i<bb.getclasssize();i++) {
-    			
-    			x1=bb.readclass(i).getx();
-    			y1=bb.readclass(i).gety();
-    			if(Math.abs(x-x1)<BoxDimesions.length/2 || Math.abs(y-y1)<BoxDimesions.width/2) {
-    				System.out.println("class 2 already exists");
-    				// call draw relationship
-    				
-    				flag=false;
-    				break;
-    			}
-    			
-    		    
-    		}
-        }
-        
-		// TODO Auto-generated method stub
-		
+		else if(clickNumber == 1) {
+			result = evaluator.evaluateCollision(x, y);
+			if(result == true) {
+				System.out.println("Class 2 exists");
+				//Draw Relationship
+				clickNumber = 0;
+			}
+		}
 	}
+	
+	/*
+	 * public void mouseClicked(MouseEvent e) { double x,y; x=e.getX(); y=e.getY();
+	 * 
+	 * 
+	 * Strategy s;
+	 * 
+	 * 
+	 * //d.repaint(); //s.draw();
+	 * 
+	 * Storage bb=Storage.getInstance(); double x1,y1; int f=0; if(flag == false) {
+	 * for(int i=0;i<bb.getclasssize();i++) {
+	 * 
+	 * x1=bb.readclass(i).getx(); y1=bb.readclass(i).gety();
+	 * if(Math.abs(x-x1)<BoxDimesions.length/2 ||
+	 * Math.abs(y-y1)<BoxDimesions.width/2) {
+	 * System.out.println("class already exists"); flag=true; f=1; startx=x;
+	 * starty=y; break; }
+	 * 
+	 * } if(f==0) { s= new DrawRectangle();
+	 * 
+	 * //Drawable d=(Drawable)e.getSource(); System.out.println(e);
+	 * 
+	 * System.out.println("controller "+x+" "+y); s.draw(d,x,y); } } else { for(int
+	 * i=0;i<bb.getclasssize();i++) {
+	 * 
+	 * x1=bb.readclass(i).getx(); y1=bb.readclass(i).gety();
+	 * if(Math.abs(x-x1)<BoxDimesions.length/2 ||
+	 * Math.abs(y-y1)<BoxDimesions.width/2) {
+	 * System.out.println("class 2 already exists"); // call draw relationship
+	 * 
+	 * flag=false; break; } } } }
+	 */
 
 	@Override
 	public void mousePressed(MouseEvent e) {
