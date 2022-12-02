@@ -6,6 +6,7 @@ import java.util.Queue;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
@@ -18,9 +19,8 @@ import java.awt.event.ActionListener;
 public class DrawRelationship {
 	
   public void draw() {
-	  System.out.println("hi");
-	  JFrame frame = new JFrame();
-      frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+	//  System.out.println("hi");
+	  
       
       JPanel panel = new JPanel(new GridLayout(0, 1));
      
@@ -39,19 +39,16 @@ public class DrawRelationship {
       panel.add(button3);
       
       
+      
+      
       Controller controller =new Controller();
       button1.addActionListener(controller);
       button2.addActionListener(controller);
       button3.addActionListener(controller);
       
-      ButtonGroup group = new ButtonGroup();
-      group.add(button1);
-      group.add(button2);
-      group.add(button3);
-
-      frame.add(panel);
-      frame.setSize(150, 150);
-      frame.setVisible(true);
+   
+      JOptionPane.showInputDialog(null,panel);
+      
   }
 		
 	

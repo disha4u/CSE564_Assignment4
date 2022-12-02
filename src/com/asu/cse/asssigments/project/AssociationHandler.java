@@ -5,10 +5,11 @@ public class AssociationHandler implements Handler{
 	public String getSourceCode(Relationship r,String sourceCode) {
 		String s[];
 		int indexclass1,brace;
-		
+		//System.out.println(sourceCode+" "+r.getclass1()+" "+r.getclass2());
 		indexclass1=sourceCode.indexOf("class"+" "+r.getclass1());
 			
 		brace=sourceCode.indexOf("}",indexclass1);
+		//System.out.println("idex class1 "+indexclass1+" ,brace "+brace+" ,string len "+sourceCode.length());
 		String classstr=sourceCode.substring(indexclass1,brace);
 		if (classstr.contains("method()")) {
 			int ind=sourceCode.indexOf("method()");
