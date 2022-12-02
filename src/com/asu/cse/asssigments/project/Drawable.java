@@ -10,6 +10,7 @@ public class Drawable extends JPanel{
 	
 	double x,y;
 	String cname="";
+	int i=0;
 	public void setxy(double x,double y) {
 		this.x=x;
 		this.y=y;
@@ -25,21 +26,25 @@ public class Drawable extends JPanel{
 	
 	Drawable()
 	{
-		setBackground(Color.GREEN);
+		
+		//setBackground(Color.WHITE);
 	}
 	
-	
+	@Override
 	public void paintComponent(Graphics g) {
 		//System.out.println("pc "+x);
 		//System.out.println("pc "+y);
+		
+		    super.paintComponent(g);
+		
 		Graphics2D graphics = (Graphics2D) g.create();
-		graphics.setColor(Color.GREEN);
+		graphics.setColor(Color.YELLOW);
 		graphics.fill(new Rectangle2D.Double(x, y,BoxDimesions.length, BoxDimesions.width));
-		graphics.setColor(Color.RED);
+		graphics.setColor(Color.BLACK);
 		
 		graphics.drawString(cname, (int)x, (int)y+BoxDimesions.width/2);
 		
-		this.updateUI();
+		//this.repaint();
 		
 	}
 
