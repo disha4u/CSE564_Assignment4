@@ -4,5 +4,5 @@ import java.awt.Graphics;
 
 public interface Strategy {
 
-	public void draw(Drawable d,double x,double y);
+	public void draw(Graphics g,double x,double y);
 }

@@ -46,11 +46,13 @@ public class Controller implements ActionListener,MouseListener {
 		
 		s= new DrawRectangle();
 		
-		//Drawable d=(Drawable)e.getSource();
+		Drawable d=(Drawable)e.getSource();
 		System.out.println(e);
 		System.out.println("controller "+x+" "+y);
-		s.draw(d,x,y);
-		//d.repaint();
+		Graphics g= d.returGraphics();
+//		d.set
+		s.draw(g,x,y);
+//		d.repaint();
 		//s.draw();
 		
 		Storage bb=Storage.getInstance();
