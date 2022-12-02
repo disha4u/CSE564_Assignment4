@@ -48,19 +48,19 @@ public class Controller implements ActionListener,MouseListener {
 			c1="";
 			c2="";
 			bb.addrelationship(r);
-			d.repaint();
+			//d.repaint();
 		}
 		else if(action.equals("Composition")) {
 			Relationship r=new Relationship("Composition",c1,c2);
 			Storage bb=Storage.getInstance();
 			bb.addrelationship(r);
-			d.repaint();
+			//d.repaint();
 		}
 		else if(action.equals("Inheritance")) {
 			Relationship r=new Relationship("Inheritance",c1,c2);
 			Storage bb=Storage.getInstance();
 			bb.addrelationship(r);
-			d.repaint();
+			//d.repaint();
 		}
 		
 	}
@@ -101,39 +101,7 @@ public class Controller implements ActionListener,MouseListener {
 		}
 	}
 	
-	/*
-	 * public void mouseClicked(MouseEvent e) { double x,y; x=e.getX(); y=e.getY();
-	 * 
-	 * 
-	 * Strategy s;
-	 * 
-	 * 
-	 * //d.repaint(); //s.draw();
-	 * 
-	 * Storage bb=Storage.getInstance(); double x1,y1; int f=0; if(flag == false) {
-	 * for(int i=0;i<bb.getclasssize();i++) {
-	 * 
-	 * x1=bb.readclass(i).getx(); y1=bb.readclass(i).gety();
-	 * if(Math.abs(x-x1)<BoxDimesions.length/2 ||
-	 * Math.abs(y-y1)<BoxDimesions.width/2) {
-	 * System.out.println("class already exists"); flag=true; f=1; startx=x;
-	 * starty=y; break; }
-	 * 
-	 * } if(f==0) { s= new DrawRectangle();
-	 * 
-	 * //Drawable d=(Drawable)e.getSource(); System.out.println(e);
-	 * 
-	 * System.out.println("controller "+x+" "+y); s.draw(d,x,y); } } else { for(int
-	 * i=0;i<bb.getclasssize();i++) {
-	 * 
-	 * x1=bb.readclass(i).getx(); y1=bb.readclass(i).gety();
-	 * if(Math.abs(x-x1)<BoxDimesions.length/2 ||
-	 * Math.abs(y-y1)<BoxDimesions.width/2) {
-	 * System.out.println("class 2 already exists"); // call draw relationship
-	 * 
-	 * flag=false; break; } } } }
-	 */
-
+	
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
