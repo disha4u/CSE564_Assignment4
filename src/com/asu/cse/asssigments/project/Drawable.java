@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 public class Drawable extends JPanel{
 	
 	double x,y;
+	String cname="";
 	public void setxy(double x,double y) {
 		this.x=x;
 		this.y=y;
@@ -16,6 +17,12 @@ public class Drawable extends JPanel{
 		System.out.println("drawable "+y);
 		
 	}
+	public void settxt(String txt) {
+		this.cname=txt;
+		
+		
+	}
+	
 	Drawable()
 	{
 		setBackground(Color.GREEN);
@@ -26,9 +33,12 @@ public class Drawable extends JPanel{
 		System.out.println("pc "+x);
 		System.out.println("pc "+y);
 		Graphics2D graphics = (Graphics2D) g.create();
+		graphics.setColor(Color.GREEN);
 		graphics.fill(new Rectangle2D.Double(x, y,BoxDimesions.length, BoxDimesions.width));
-		
 		graphics.setColor(Color.RED);
+		
+		graphics.drawString(cname, (int)x, (int)y+BoxDimesions.width/2);
+		
 		this.updateUI();
 		
 	}
