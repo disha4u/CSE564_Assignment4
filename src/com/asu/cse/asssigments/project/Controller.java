@@ -11,10 +11,16 @@ import java.io.File;
 
 public class Controller implements ActionListener,MouseListener {
 	 Drawable d;
-	double startx,starty;
-	boolean flag = false;
+	 String c1,c2;
+	 static int clickNumber = 0;
+	//double startx,starty;
+	//boolean flag = false;
     Controller(Drawable d){
     	this.d=d;
+    }
+    
+    Controller(){
+    	
     }
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -34,6 +40,22 @@ public class Controller implements ActionListener,MouseListener {
 			Storage bb=Storage.getInstance();
 			bb.cleardata();
 		}
+		else if(action.equals("Association")) {
+			Relationship r=new Relationship("Association",c1,c2);
+			Storage bb=Storage.getInstance();
+			bb.addrelationship(r);
+		}
+		else if(action.equals("Composition")) {
+			Relationship r=new Relationship("Composition",c1,c2);
+			Storage bb=Storage.getInstance();
+			bb.addrelationship(r);
+		}
+		else if(action.equals("Inheritance")) {
+			Relationship r=new Relationship("Inheritance",c1,c2);
+			Storage bb=Storage.getInstance();
+			bb.addrelationship(r);
+		}
+		
 	}
 
 	@Override
@@ -42,27 +64,30 @@ public class Controller implements ActionListener,MouseListener {
 		x=e.getX(); 
 		y=e.getY();
 		Evaluator evaluator = new Evaluator();
-		int clickNumber = 0;
-		boolean result;
+		
+		String result;
 		if(clickNumber==0) {
 			result = evaluator.evaluateCollision(x, y);
-			if(result == true) {
-				System.out.println("Class exists");
+			if(result.length() != 0) {
+				System.out.println(result+" Class exists");
+				c1=result;
+				clickNumber=1;
 			}
 			else {
 				DrawRectangle s= new DrawRectangle();
-				startx=x;
-				starty=y;
+				
 				s.draw(d, x, y);
-				clickNumber+=1;
+				
 			}
 		}
 		else if(clickNumber == 1) {
 			result = evaluator.evaluateCollision(x, y);
-			if(result == true) {
-				System.out.println("Class 2 exists");
+			if(result.length() != 0) {
+				System.out.println(result+" Class 2 exists");
 				//Draw Relationship
-//				if("")
+				c2=result;
+				DrawRelationship dr=new DrawRelationship();
+                dr.draw();
 				
 				clickNumber = 0;
 			}

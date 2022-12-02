@@ -7,9 +7,9 @@ import java.awt.geom.Rectangle2D;
 
 import javax.swing.JOptionPane;
 
-public class DrawRectangle implements Strategy{
+public class DrawRectangle {
 
-	@Override
+	
 	public void draw(Drawable d,double x, double y) {
 		// TODO Auto-generated method stub
 		
