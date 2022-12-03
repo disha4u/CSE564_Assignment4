@@ -76,13 +76,18 @@ public class Controller implements ActionListener,MouseListener {
 		y=e.getY();
 		Evaluator evaluator = new Evaluator();
 		
-		String result;
+		Objects result;
 		if(clickNumber==0) {
 			result = evaluator.evaluateCollision(x, y);
-			if(result.length() != 0) {
+			if(result!=null) {
 				bar.settext(result+" Class exists, click on another class to form a relationship");
-				c1=result;
+				c1=result.getname();
+				if (result.getx()==x) {
+					c1="";
+				}
+				else {
 				clickNumber=1;
+				}
 			}
 			else {
 				DrawRectangle s= new DrawRectangle();
@@ -93,8 +98,8 @@ public class Controller implements ActionListener,MouseListener {
 		}
 		else if(clickNumber == 1) {
 			result = evaluator.evaluateCollision(x, y);
-			if(result.length() != 0) {
-				c2=result;
+			if(result!= null) {
+				c2=result.getname();
 				DrawRelationship dr=new DrawRelationship();
                 dr.draw();
                 bar.settext(result+" Class2 exists, choose relationship type");
@@ -102,7 +107,6 @@ public class Controller implements ActionListener,MouseListener {
 			}
 			else {
 				 bar.settext("No class detected, please choose another class");
-				//clickNumber = 1;
 			}
 		}
 	}
@@ -115,7 +119,7 @@ public class Controller implements ActionListener,MouseListener {
 		y=e.getY();
 		Evaluator evaluator = new Evaluator();
 
-		result = evaluator.evaluateCollision(x, y);
+		result = evaluator.evaluateCollision(x, y).getname();
 	}
 
 	@Override
@@ -125,6 +129,8 @@ public class Controller implements ActionListener,MouseListener {
 		y=e.getY();
 		Storage bb=Storage.getInstance();
 		bb.modifyclass(result, x, y);
+		c1="";
+		result=null;
 	}
 
 	@Override
