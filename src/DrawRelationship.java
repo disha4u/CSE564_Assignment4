@@ -16,34 +16,38 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * @author Ramachandra Sai
+ * @author Disha Agarawal
+ * @author Harshit
+ * @author Chandana
+ * @author Vinay
+ * @author Karthikeya
+ */
 public class DrawRelationship {
-	
-  public void draw() { 
-      
-      JPanel panel = new JPanel(new GridLayout(0, 1));
-     
-      JRadioButton button1 = new JRadioButton("Association");
-      button1.setHorizontalTextPosition(SwingConstants.RIGHT);
-      JRadioButton button2 = new JRadioButton("Inheritance");
-      button2.setHorizontalTextPosition(SwingConstants.RIGHT);
-      JRadioButton button3 = new JRadioButton("Composition");
-      button3.setHorizontalTextPosition(SwingConstants.RIGHT);
-      
-      panel.add(button1);
-      panel.add(button2);
-      panel.add(button3);
-      
-      Controller controller =new Controller();
-      button1.addActionListener(controller);
-      button2.addActionListener(controller);
-      button3.addActionListener(controller);
-      
-      JOptionPane.showMessageDialog(null,panel);
-      
-  }
-		
-	
-	
-	
+
+	public void draw() {
+
+		JPanel panel = new JPanel(new GridLayout(0, 1));
+
+		JRadioButton button1 = new JRadioButton("Association");
+		button1.setHorizontalTextPosition(SwingConstants.RIGHT);
+		JRadioButton button2 = new JRadioButton("Inheritance");
+		button2.setHorizontalTextPosition(SwingConstants.RIGHT);
+		JRadioButton button3 = new JRadioButton("Composition");
+		button3.setHorizontalTextPosition(SwingConstants.RIGHT);
+
+		panel.add(button1);
+		panel.add(button2);
+		panel.add(button3);
+
+		Controller controller = new Controller();
+		button1.addActionListener(controller);
+		button2.addActionListener(controller);
+		button3.addActionListener(controller);
+
+		JOptionPane.showMessageDialog(null, panel);
+
+	}
 
 }

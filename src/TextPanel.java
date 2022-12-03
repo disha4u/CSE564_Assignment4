@@ -4,43 +4,52 @@ import java.io.FileWriter;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class TextPanel implements Observer,Runnable{
+/**
+ * @author Ramachandra Sai
+ * @author Disha Agarawal
+ * @author Harshit
+ * @author Chandana
+ * @author Vinay
+ * @author Karthikeya
+ */
+public class TextPanel implements Observer, Runnable {
 	Storage storage = Storage.getInstance();
 	Writable writable;
-	TextPanel(Writable writable)
-	{
-		this.writable=writable;
+
+	TextPanel(Writable writable) {
+		this.writable = writable;
 	}
+
 	@Override
-		public void run() {
+	public void run() {
 		// TODO Auto-generated method stub
 
 		String code = "";
 
 		Relationship r;
-		InheritanceHandler ih=new InheritanceHandler();
-		CompositionHandler ch=new CompositionHandler();
-		AssociationHandler ah=new AssociationHandler();
-		
+		InheritanceHandler ih = new InheritanceHandler();
+		CompositionHandler ch = new CompositionHandler();
+		AssociationHandler ah = new AssociationHandler();
+
 		ih.setSuccessor(ch);
 		ch.setSuccessor(ah);
 
 		int i;
-		for(i=0;i<storage.getclasssize();i++) {
-			Objects currentClass = storage.readclass(i); 
+		for (i = 0; i < storage.getclasssize(); i++) {
+			Objects currentClass = storage.readclass(i);
 			String className = currentClass.getname();
-			code+="class "+ className + "{\n}\n";
+			code += "class " + className + "{\n}\n";
 		}
 
-        for(i=0;i<storage.getrelationshipsize();i++) {
-        	r=storage.readrelationship(i);
-        	code=ih.getSourceCode(r,code);
-		    
-		} 
+		for (i = 0; i < storage.getrelationshipsize(); i++) {
+			r = storage.readrelationship(i);
+			code = ih.getSourceCode(r, code);
+
+		}
 
 		writable.setText(code);
 		writable.setVisible(true);
-		
+
 	}
 
 	@Override

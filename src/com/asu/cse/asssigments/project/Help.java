@@ -3,7 +3,14 @@ package com.asu.cse.asssigments.project;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
+/**
+ * @author Ramachandra Sai
+ * @author Disha Agarawal
+ * @author Harshit
+ * @author Chandana
+ * @author Vinay
+ * @author Karthikeya
+ */
 public class Help extends JFrame {
 	Help() {
 		JPanel panel = new JPanel();
