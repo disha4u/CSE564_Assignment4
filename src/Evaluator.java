@@ -12,7 +12,9 @@
 public class Evaluator {
 	/**
 	 * This Method check whether click happens at the same where class is present,
-	 * @return String   
+	 * @param double x
+	 * @param double y
+	 *  @return String   
 	**/
 	public String evaluateCollision(double x, double y) {
 		String result = "";

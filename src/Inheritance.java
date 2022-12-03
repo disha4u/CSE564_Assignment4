@@ -14,12 +14,23 @@ import java.awt.geom.Line2D;
  * @author Karthikeya
  */
 public class Inheritance extends RelationshipDecorator {
-
+	/**
+	 * sets the object to the parent
+	 * @param DrawConnections r
+	 */
 	public Inheritance(DrawConnections r) {
 		super(r);
 	}
-
+	/**
+	 * Overrides method from Draw connections and draws a triangle
+	 * @param Graphics g
+	 * @param int x1
+	 * @param int y1
+	 * @param int x2
+	 * @param int y2
+	 */
 	@Override
+
 	public void draw(Graphics g, int x1, int y1, int x2, int y2) {
 		// TODO Auto-generated mthod stub
 		super.draw(g, x1, y1, x2, y2);

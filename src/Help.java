@@ -13,6 +13,10 @@ import javax.swing.JPanel;
  * @author Karthikeya
  */
 public class Help extends JFrame {
+	/**
+	 *  Gives the Names of teams
+	 * 
+	 */
 	Help() {
 		JPanel panel = new JPanel();
 		JLabel label = new JLabel(

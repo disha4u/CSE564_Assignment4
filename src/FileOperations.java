@@ -18,11 +18,11 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class FileOperations {
 	/**
-	 * Gets the file from the filchoose
+	 * Gets the file from the filchooser to load
 	 * @return File
 	 */
 	public File getFilePath() {
-		System.out.println("Here");
+		
 		try {
 			JFileChooser jFileChooser = new JFileChooser();
 			FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV Files", "csv");
@@ -35,7 +35,10 @@ public class FileOperations {
 		}
 	}
 
-
+	/**
+	 * Makes the text file which contains all the relations and classes
+	 * @param fname
+	 */
 	public void tofile(String fname) {
 		try {
 			Storage bb = Storage.getInstance();
@@ -60,7 +63,10 @@ public class FileOperations {
 
 		}
 	}
-
+	/**
+	 * reads the file and creates relationships and classes
+	 * @param file
+	 */
 	public void fromfile(File file) {
 		try {
 			Storage bb = Storage.getInstance();
@@ -100,7 +106,9 @@ public class FileOperations {
 			System.out.println("file not found" + e);
 		}
 	}
-
+	/**
+	 * Clear the data present in the storage and clears the screen
+	 */
 	public void New() {
 		Storage s = Storage.getInstance();
 		s.cleardata();

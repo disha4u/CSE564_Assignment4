@@ -10,16 +10,21 @@
  * @author Karthikeya
  */
 public class InheritanceHandler extends ConcreteHandler {
-
+	/**
+	 * Modifies the given sourcecode and returns updated to the next succecssor based on Inheritance relation 
+	 * @param Relationship r
+	 * @param String sourceCode 
+	 * @return String
+	 */
 	@Override
 	public String getSourceCode(Relationship r, String sourceCode) {
 		// TODO Auto-generated method stub
 		if (r.getname().toLowerCase().equals("inheritance")) {
 
-			System.out.println(r.getname());
+		
 			int index = sourceCode.indexOf("class" + " " + r.getclass1());
 			String beforBrace = sourceCode.substring(index, sourceCode.indexOf("{", index));
-			System.out.println("beforBrace " + beforBrace);
+			
 			if (beforBrace.contains("extends")) {
 				int extendsIndex = sourceCode.indexOf("extends", index) + "extends".length() + 1;
 
@@ -28,7 +33,7 @@ public class InheritanceHandler extends ConcreteHandler {
 
 			} else {
 				int braceIndex = sourceCode.indexOf("{", index);
-				System.out.println("braceIndex " + braceIndex);
+				
 				sourceCode = sourceCode.substring(0, braceIndex) + " extends " + r.getclass2()
 						+ sourceCode.substring(braceIndex - 1, sourceCode.length());
 
