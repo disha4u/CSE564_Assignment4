@@ -20,8 +20,7 @@ public class Main extends JFrame  {
 	* @param Source object
 	*/
 	Writable writable;
-	Main()
-	{
+	Main(){
 		BorderLayout borderLayout = new BorderLayout();
         setLayout(borderLayout);
         Dimension preferred = new Dimension();
@@ -66,15 +65,11 @@ public class Main extends JFrame  {
 	* the function is called as the project is started
 	* @param String[] args
 	*/
-	public static void main(String[] args)
-	{
+	public static void main(String[] args){
 		Main m=new Main();
-		//FileOperations fr=new FileOperations();
-		//fr.fromfile("C:\\Users\\Disha\\Desktop\\cse564sd\\CSE564_Assignment4\\src\\dummydata.txt");
 		TextPanel textPanel = new TextPanel(m.writable);
 		Storage storage = Storage.getInstance();
 		Storage.getInstance().addObservers(textPanel);
-//		textPanel.run();
 	}
 	
 

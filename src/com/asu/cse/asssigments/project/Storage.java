@@ -74,13 +74,13 @@ public class Storage extends Observable{
 	
 	public void modifyclass(String name,double x,double y) {
       for(int i=0;i<classes.size();i++) {
-			
 			if(classes.get(i).getname().equals(name)) {
 				classes.get(i).setx(x);
 				classes.get(i).sety(y);
 			}
 		}
 	}
+	
 	public int getRelationshipSize()
 	{
 		if(rs==null)

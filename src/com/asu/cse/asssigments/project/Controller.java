@@ -13,7 +13,7 @@ public class Controller implements ActionListener,MouseListener {
 	 Drawable d;
 	 static String c1,c2;
 	 static int clickNumber = 0;
-
+	 String result;
 	 Controller(Drawable d){
     	this.d=d;
     }
@@ -81,9 +81,7 @@ public class Controller implements ActionListener,MouseListener {
 			}
 			else {
 				DrawRectangle s= new DrawRectangle();
-				
 				s.draw(d, x, y);
-				
 			}
 		}
 		else if(clickNumber == 1) {
@@ -102,14 +100,21 @@ public class Controller implements ActionListener,MouseListener {
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+		double x, y; 
+		x=e.getX(); 
+		y=e.getY();
+		Evaluator evaluator = new Evaluator();
+
+		result = evaluator.evaluateCollision(x, y);
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+		double x, y; 
+		x=e.getX(); 
+		y=e.getY();
+		Storage bb=Storage.getInstance();
+		bb.modifyclass(result, x, y);
 	}
 
 	@Override
