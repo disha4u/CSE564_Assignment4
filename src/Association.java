@@ -7,9 +7,6 @@ import java.awt.geom.Line2D;
  * @author Ramachandra Sai
  * @author Disha Agarawal
  * @author Harshit
- * @author Chandana
- * @author Vinay
- * @author Karthikeya
  */
 public class Association extends RelationshipDecorator {
 	/**

@@ -10,18 +10,22 @@ import javax.swing.JTextArea;
  * @author Ramachandra Sai
  * @author Disha Agarawal
  * @author Harshit
- * @author Chandana
- * @author Vinay
- * @author Karthikeya
  */
 public class TextPanel implements Observer, Runnable {
 	Storage storage = Storage.getInstance();
 	JTextArea writable;
 
+	/**
+	 * sets JTextArea which is passed from main
+	 * @param JTextArea object
+	 */
 	TextPanel(JTextArea writable) {
 		this.writable = writable;
 	}
 
+	/**
+	 * Updates the code, accesses the singleton storage.
+	 */
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
@@ -54,6 +58,10 @@ public class TextPanel implements Observer, Runnable {
 
 	}
 
+	/**
+	 * Updates the code
+	 * @param Observable object
+	 */
 	@Override
 	public void Update(Observable o) {
 		// TODO Auto-generated method stub
