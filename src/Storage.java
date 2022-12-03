@@ -1,4 +1,6 @@
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -25,10 +27,8 @@ public class Storage extends Observable {
 	 * Private Constructor for Singleton
 	 */
 	protected Storage() {
-//		Objects currentClass = new Objects("A",20,20);
 		classes = new ArrayList<Objects>();
 		rs = new ArrayList<Relationship>();
-//		classes.add(currentClass);
 	}
 
 	/**

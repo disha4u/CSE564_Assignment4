@@ -1,4 +1,10 @@
 
+
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Line2D;
+
 /**
  * @author Ramachandra Sai
  * @author Disha Agarawal
@@ -7,11 +13,6 @@
  * @author Vinay
  * @author Karthikeya
  */
-
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.geom.Line2D;
-
 public class Association extends RelationshipDecorator {
 
 	public Association(DrawConnections r) {

@@ -1,4 +1,6 @@
 
+
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -24,8 +26,6 @@ public class Drawable extends JPanel {
 	public void setxy(double x, double y) {
 		this.x = x;
 		this.y = y;
-		System.out.println("drawable " + x);
-		System.out.println("drawable " + y);
 
 	}
 
@@ -73,53 +73,13 @@ public class Drawable extends JPanel {
 				}
 
 			}
-//			System.out.println(x1+" "+y1+" "+x2+" "+y2+" "+r.name+" "+r.class1+" "+r.class2);
 			if (x1 != 0 && x2 != 0 && y1 != 0 && y2 != 0) {
 				if (r.name.toLowerCase().equals("inheritance")) {
 					relationship = new Inheritance(new UndirectedAssociation());
-					// relationship.draw(g, (int)s.readclass(i).xcoor,
-					// (int)(s.readclass(i).ycoor+BoxDimesions.width/2),
-					// (int)s.readclass(i).xcoor+100,
-					// (int)(s.readclass(i).ycoor+BoxDimesions.width/2)+100);
-//					x1=x1+10;
-//					x2=x2+10;
-//					y2=y2+10;
-//					y1=y1+10;
-//					if(x1>x2)
-//						x2+=BoxDimesions.length/3;
-//					else if(x1<x2)
-//						x2-=BoxDimesions.length/3;
-//					if(y1>y2)
-//						y2+=BoxDimesions.length/3;
-//					else if(y1<y2)
-//						y2-=BoxDimesions.length/3;
+	
 					relationship.draw(g, x1, y1, x2, y2);
 				} else if (r.name.toLowerCase().equals("composition")) {
 					relationship = new Composition(new UndirectedAssociation());
-					// relationship.draw(g, (int)s.readclass(i).xcoor,
-					// (int)(s.readclass(i).ycoor+BoxDimesions.width/2),
-					// (int)s.readclass(i).xcoor-100,
-					// (int)(s.readclass(i).ycoor+BoxDimesions.width/2)-100);
-//					x1=x1+5;
-//					x2=x2+5;
-//					y2=y2+5;
-//					y1=y1+5;
-//					if(x1>x2)
-//						x2+=10;
-//					else if(x1<x2)
-//						x2-=10;
-//					if(y1>y2)
-//						y2+=10;
-//					else if(y1<y2)
-//						y2-=10;
-//					if(x1>x2)
-//						x2+=BoxDimesions.length/3;
-//					else if(x1<x2)
-//						x2-=BoxDimesions.length/3;
-//					if(y1>y2)
-//						y2+=BoxDimesions.length/3;
-//					else if(y1<y2)
-//						y2-=BoxDimesions.length/3;
 					relationship.draw(g, x1, y1, x2, y2);
 
 				} else if (r.name.toLowerCase().equals("association")) {
@@ -135,19 +95,7 @@ public class Drawable extends JPanel {
 				}
 			}
 		}
-//			graphics.setColor(Color.GREEN);
-//			Relationship r=s.readrelationship(i);
-//			int x1=400;//r.class1.xcoor;
-//			int y1=400;//r.class1.ycoor;
-//			int x2=500;//r.class2.xcoor;
-//			int y2=500;//r.class2.ycoor;
-//			DrawConnections relationship;
-//			if(true)//r.name.toLowerCase()=="inheritance")
-//			{
-//				relationship=new Inheritance(new UndirectedAssociation());
-//				relationship.draw(g, 30, 40, 50, 50);
-//			}
-////		}
+
 		this.repaint();
 	}
 

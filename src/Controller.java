@@ -1,4 +1,6 @@
 
+
+
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
@@ -18,10 +20,10 @@ import java.io.File;
  */
 public class Controller implements ActionListener, MouseListener {
 	Drawable d;
-	StatusBar bar;
+	static StatusBar bar;
 	static String c1, c2;
 	static int clickNumber = 0;
-	String result;
+	String result = "";
 
 	Controller(Drawable d, StatusBar bar) {
 		this.d = d;
@@ -58,14 +60,17 @@ public class Controller implements ActionListener, MouseListener {
 			Storage bb = Storage.getInstance();
 			c1 = "";
 			c2 = "";
+			bar.settext("Creating Association Relationship between " + c1 + " and " + c2);
 			bb.addrelationship(r);
 		} else if (action.equals("Composition")) {
 			Relationship r = new Relationship("Composition", c1, c2);
 			Storage bb = Storage.getInstance();
+			bar.settext("Creating Composition Relationship between " + c1 + " and " + c2);
 			bb.addrelationship(r);
 		} else if (action.equals("Inheritance")) {
 			Relationship r = new Relationship("Inheritance", c1, c2);
 			Storage bb = Storage.getInstance();
+			bar.settext("Creating Inheritance Relationship between " + c1 + " and " + c2);
 			bb.addrelationship(r);
 		}
 	}
@@ -88,8 +93,7 @@ public class Controller implements ActionListener, MouseListener {
 			} else {
 				DrawRectangle s = new DrawRectangle();
 
-				bar.settext("creating class at " + x + "," + y);
-				s.draw(d, x, y);
+				s.draw(d, x, y, bar);
 			}
 		} else if (clickNumber == 1) {
 			result = evaluator.evaluateCollision(x, y);
@@ -98,7 +102,7 @@ public class Controller implements ActionListener, MouseListener {
 				c2 = result;
 				DrawRelationship dr = new DrawRelationship();
 				dr.draw();
-				bar.settext(result + " Class2 exists");
+				bar.settext(result + " Class2 exists, choose relationship type");
 				clickNumber = 0;
 			}
 		}
@@ -112,6 +116,7 @@ public class Controller implements ActionListener, MouseListener {
 		Evaluator evaluator = new Evaluator();
 
 		result = evaluator.evaluateCollision(x, y);
+
 	}
 
 	@Override

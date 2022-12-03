@@ -1,4 +1,6 @@
 
+
+
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -29,12 +31,5 @@ public class StatusBar extends JPanel {
 	public void settext(String s) {
 		label.setText(txt + s);
 	}
-
-//	@Override
-//	public void Update(Observable o) {
-//		// TODO Auto-generated method stub
-//		int index = storage.getclasssize();
-//		
-//	}
 
 }

@@ -1,3 +1,6 @@
+
+
+
 /**
  * @author Ramachandra Sai
  * @author Disha Agarawal
@@ -13,8 +16,6 @@ public class InheritanceHandler extends ConcreteHandler {
 		// TODO Auto-generated method stub
 		if (r.getname().toLowerCase().equals("inheritance")) {
 
-			// System.out.println("Hello, World!");
-			// String sourceCode="class A \n{\n}\n";// extends B,C\n{\n}";
 			System.out.println(r.getname());
 			int index = sourceCode.indexOf("class" + " " + r.getclass1());
 			String beforBrace = sourceCode.substring(index, sourceCode.indexOf("{", index));
@@ -25,7 +26,6 @@ public class InheritanceHandler extends ConcreteHandler {
 				sourceCode = sourceCode.substring(0, extendsIndex) + r.getclass2() + ","
 						+ sourceCode.substring(extendsIndex, sourceCode.length());
 
-				// sourceCode=sourceCode.substring(0,)
 			} else {
 				int braceIndex = sourceCode.indexOf("{", index);
 				System.out.println("braceIndex " + braceIndex);
@@ -33,7 +33,6 @@ public class InheritanceHandler extends ConcreteHandler {
 						+ sourceCode.substring(braceIndex - 1, sourceCode.length());
 
 			}
-			// System.out.println(index+" "+beforBrace);
 
 		} else {
 			sourceCode = successor.getSourceCode(r, sourceCode);

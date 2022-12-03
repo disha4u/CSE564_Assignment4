@@ -1,4 +1,6 @@
 
+
+
 import java.awt.Graphics;
 
 /**
@@ -23,7 +25,6 @@ public class Relationship {
 		this.class1 = class1;
 		this.class2 = class2;
 	}
-//	public abstract void draw( Graphics g);
 
 	/**
 	 * @param name of class1
