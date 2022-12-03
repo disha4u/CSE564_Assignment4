@@ -7,18 +7,16 @@ import java.awt.Graphics;
  * @author Ramachandra Sai
  * @author Disha Agarawal
  * @author Harshit
- * @author Chandana
- * @author Vinay
- * @author Karthikeya
  */
 public class Relationship {
 
 	String name, class1, class2;
 
 	/**
-	 * Plots the graph
-	 * 
-	 * @param graphics object
+	 * Creates relationship object
+	 * @param name of the relationship
+	 * @param class1
+	 * @param class2
 	 */
 	Relationship(String name, String class1, String class2) {
 		this.name = name;
@@ -68,6 +66,9 @@ public class Relationship {
 		return class2;
 	}
 
+	/**
+	 * @return string representation of relationship
+	 */
 	@Override
 	public String toString() {
 		return class1 + "," + class2 + "," + name;

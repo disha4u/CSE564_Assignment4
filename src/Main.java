@@ -19,11 +19,9 @@ import javax.swing.*;
  * @author Karthikeya
  */
 public class Main extends JFrame {
+	
 	/**
-	 * Overriding paint component from JPanel
-	 * 
-	 * @param PlotPanel object
-	 * @param Source    object
+	 * Creating menu bar and panels
 	 */
 	JTextArea writable;
 
@@ -70,7 +68,6 @@ public class Main extends JFrame {
 
 	/**
 	 * the function is called as the project is started
-	 * 
 	 * @param String[] args
 	 */
 	public static void main(String[] args) {

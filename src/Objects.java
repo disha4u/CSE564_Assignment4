@@ -13,6 +13,12 @@ public class Objects {
 	String name;
 	double xcoor, ycoor;
 
+	/**
+	 * Creates class object
+	 * @param name of the class
+	 * @param x coordinate
+	 * @param y coordinate
+	 */
 	public Objects(String s, double x, double y) {
 
 		this.name = s;
@@ -62,6 +68,9 @@ public class Objects {
 		return ycoor;
 	}
 
+	/**
+	 * @return string representation of class object
+	 */
 	@Override
 	public String toString() {
 		return name + "," + xcoor + "," + ycoor;
