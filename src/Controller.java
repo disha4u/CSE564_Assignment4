@@ -108,7 +108,6 @@ public class Controller implements ActionListener, MouseListener {
 		} else if (clickNumber == 1) {
 			result = evaluator.evaluateCollision(x, y);
 			if (result.length() != 0) {
-				System.out.println(result + " Class 2 exists");
 				c2 = result;
 				DrawRelationship dr = new DrawRelationship();
 				dr.draw();
