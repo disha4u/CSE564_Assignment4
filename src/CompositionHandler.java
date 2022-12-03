@@ -1,5 +1,5 @@
-
 /**
+ * This class is for drawing the Composition relationship which is part of decorator pattern
  * @author Ramachandra Sai
  * @author Disha Agarawal
  * @author Harshit
@@ -8,9 +8,11 @@
  * @author Karthikeya
  */
 
-
 public class CompositionHandler extends ConcreteHandler {
 
+	/**
+	 * This function updates the source code with the Association part 
+	 */
 	@Override
 	public String getSourceCode(Relationship r, String sourceCode) {
 

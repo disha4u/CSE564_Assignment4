@@ -1,6 +1,3 @@
-
-
-
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
@@ -11,6 +8,7 @@ import java.awt.event.MouseListener;
 import java.io.File;
 
 /**
+ * This is Controller Class which reacts whenever some action occur on the screen
  * @author Ramachandra Sai
  * @author Disha Agarawal
  * @author Harshit
@@ -24,16 +22,25 @@ public class Controller implements ActionListener, MouseListener {
 	static String c1, c2;
 	static int clickNumber = 0;
 	String result = "";
-
+	/**
+	 * Constructor for the class 
+	 * @param d Drawable
+	 * @param bar StatusBar
+	 */
 	Controller(Drawable d, StatusBar bar) {
 		this.d = d;
 		this.bar = bar;
 	}
-
-	Controller() {
-
+	/**
+	 * Constructor for the class 
+	 */
+	Controller(){
+		
 	}
-
+	
+	/**
+	 * This function is called when any menu options are selected
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String action = e.getActionCommand();
@@ -75,6 +82,9 @@ public class Controller implements ActionListener, MouseListener {
 		}
 	}
 
+	/**
+	 * This method is called when the mouse is clicked
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		double x, y;

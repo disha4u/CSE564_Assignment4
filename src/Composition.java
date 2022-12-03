@@ -1,10 +1,8 @@
-
-
-
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 /**
+ * This class is for drawing the Composition relationship which is part of decorator pattern 
  * @author Ramachandra Sai
  * @author Disha Agarawal
  * @author Harshit
@@ -14,11 +12,18 @@ import java.awt.Graphics2D;
  */
 public class Composition extends RelationshipDecorator {
 
+	/**
+	 * Constructor for the class
+	 * @param r DrawConnections
+	 */
 	public Composition(DrawConnections r) {
 		super(r);
 
 	}
 
+	/**
+	 * This functions draws the relationship arrowhead on the screen
+	 */
 	@Override
 	public void draw(Graphics g, int x1, int y1, int x2, int y2) {
 

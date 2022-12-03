@@ -2,6 +2,7 @@
 
 
 /**
+ * This class defines the box dimensions for the rectangle
  * @author Ramachandra Sai
  * @author Disha Agarawal
  * @author Harshit

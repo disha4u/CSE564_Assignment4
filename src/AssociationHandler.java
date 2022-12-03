@@ -1,7 +1,4 @@
-
-
-
-/**
+/** This class for updating the source code for Association relationship
  * @author Ramachandra Sai
  * @author Disha Agarawal
  * @author Harshit
@@ -11,6 +8,9 @@
  */
 public class AssociationHandler implements Handler {
 
+	/**
+	 * This function updates the source code with the Association part 
+	 */
 	@Override
 	public String getSourceCode(Relationship r, String sourceCode) {
 		String s[];
@@ -20,12 +20,9 @@ public class AssociationHandler implements Handler {
 		String classstr = sourceCode.substring(indexclass1, brace);
 		if (classstr.contains("method()")) {
 			int ind = sourceCode.indexOf("method()");
-			sourceCode = sourceCode.join(r.getclass2() + "\n", sourceCode.substring(0, ind + 10),
-					sourceCode.substring(ind + 10, sourceCode.length()));
+			sourceCode = sourceCode.join(r.getclass2() + "\n", sourceCode.substring(0, ind + 10), sourceCode.substring(ind + 10, sourceCode.length()));
 		} else {
-			sourceCode = sourceCode.join("\nmethod(){\n" + r.getclass2(), sourceCode.substring(0, brace - 1),
-					sourceCode.substring(brace - 1, sourceCode.length()));
-
+			sourceCode = sourceCode.join("\nmethod(){\n" + r.getclass2(), sourceCode.substring(0, brace - 1), sourceCode.substring(brace - 1, sourceCode.length()));
 		}
 		return sourceCode;
 

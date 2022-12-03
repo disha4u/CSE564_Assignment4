@@ -1,6 +1,3 @@
-
-
-
 import java.util.*;
 import java.util.List;
 import java.util.Queue;
@@ -19,6 +16,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
+ * This class draws the relationship on the screen
  * @author Ramachandra Sai
  * @author Disha Agarawal
  * @author Harshit
@@ -27,7 +25,9 @@ import java.awt.event.ActionListener;
  * @author Karthikeya
  */
 public class DrawRelationship {
-
+	/**
+	 * Method to show various options for relationship and draw the relationship
+	 */
 	public void draw() {
 
 		JPanel panel = new JPanel(new GridLayout(0, 1));

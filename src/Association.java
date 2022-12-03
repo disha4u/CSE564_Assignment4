@@ -1,11 +1,9 @@
-
-
-
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Line2D;
 
 /**
+ * This class is for drawing the Association relationship which is part of decorator pattern
  * @author Ramachandra Sai
  * @author Disha Agarawal
  * @author Harshit
@@ -14,11 +12,17 @@ import java.awt.geom.Line2D;
  * @author Karthikeya
  */
 public class Association extends RelationshipDecorator {
-
+	/**
+	 * Constructor for the Association class
+	 * @param r DrawConnections
+	 */
 	public Association(DrawConnections r) {
 		super(r);
 	}
 
+	/**
+	 * This functions draws the relationship arrowhead on the screen
+	 */
 	@Override
 	public void draw(Graphics g, int x1, int y1, int x2, int y2) {
 

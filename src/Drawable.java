@@ -1,14 +1,11 @@
-
-
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
-
 import javax.swing.JPanel;
 
 /**
+ * This class is the JPanel on which all the figures are drawn
  * @author Ramachandra Sai
  * @author Disha Agarawal
  * @author Harshit
@@ -23,20 +20,34 @@ public class Drawable extends JPanel {
 	int i = 0;
 	int xcoor1, ycoor1, xcoor2, ycoor2;
 
+	/**
+	 * Set the x and y coordinate to draw
+	 * @param x double
+	 * @param y double
+	 */
 	public void setxy(double x, double y) {
 		this.x = x;
 		this.y = y;
 
 	}
-
+	
+	/**
+	 * Set the class Name
+	 * @param txt String
+	*/
 	public void settxt(String txt) {
 		this.cname = txt;
 	}
 
+	/**
+	 * Constructor for the Class
+	 */
 	Drawable() {
 
 	}
-
+	/**
+	 * Method to print data on the screen
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
