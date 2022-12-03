@@ -1,5 +1,2 @@
 Classes
-jh,188.0,125.0
-yu,103.0,239.0
 Relationships
-jh,yu,Composition

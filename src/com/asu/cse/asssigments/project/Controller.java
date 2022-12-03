@@ -26,7 +26,13 @@ public class Controller implements ActionListener,MouseListener {
 	public void actionPerformed(ActionEvent e) {
 		String action = e.getActionCommand();
 		FileOperations operations = new FileOperations();
-		if(action.equals("Save")) {
+		if(action.equals("Help")) {
+			Help help = new Help();
+			help.setSize(400, 200);
+			help.setTitle("About");
+			help.setVisible(true);
+		}
+		else if(action.equals("Save")) {
 			operations.tofile("Save.txt");
 		} else if(action.equals("Load")) {
 			File filePath = operations.getFilePath();
@@ -62,7 +68,6 @@ public class Controller implements ActionListener,MouseListener {
 			bb.addrelationship(r);
 			//d.repaint();
 		}
-		
 	}
 
 	@Override

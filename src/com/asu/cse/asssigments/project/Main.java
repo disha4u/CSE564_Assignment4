@@ -14,9 +14,6 @@ import javax.swing.*;
 *@author Harshit 
 */
 public class Main extends JFrame  {
-
-	
-	
 	/**
 	* Overriding paint component from JPanel
 	* @param PlotPanel object
@@ -37,7 +34,7 @@ public class Main extends JFrame  {
 		StatusBar statusBar=new StatusBar();
 		statusBar.setPreferredSize(new Dimension(preferred.width,50));
 		JMenu fileOption = new JMenu("File");
-		JMenu helpOption = new JMenu("Help");
+		JMenuItem helpOption = new JMenuItem("Help");
 		JMenuBar menuBar = new JMenuBar();
 		JMenuItem subMenu1=new JMenuItem("New");
         JMenuItem subMenu2=new JMenuItem("Load");  
@@ -49,6 +46,7 @@ public class Main extends JFrame  {
 		subMenu1.addActionListener(controller);
         subMenu2.addActionListener(controller);
         subMenu3.addActionListener(controller);
+        helpOption.addActionListener(controller);
         menuBar.add(fileOption);
         menuBar.add(helpOption);
         add(menuBar,BorderLayout.NORTH);
