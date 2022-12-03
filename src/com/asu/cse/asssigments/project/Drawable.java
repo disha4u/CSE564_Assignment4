@@ -15,9 +15,7 @@ public class Drawable extends JPanel{
 	public void setxy(double x,double y) {
 		this.x=x;
 		this.y=y;
-		System.out.println("drawable "+x);
-		System.out.println("drawable "+y);
-		
+
 	}
 
 	

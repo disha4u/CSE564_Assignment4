@@ -52,16 +52,19 @@ public class Controller implements ActionListener,MouseListener {
 			Storage bb=Storage.getInstance();
 			c1="";
 			c2="";
+			bar.settext("Creating Association Relationship between "+c1+" and "+c2);
 			bb.addrelationship(r);
 		}
 		else if(action.equals("Composition")) {
 			Relationship r=new Relationship("Composition",c1,c2);
 			Storage bb=Storage.getInstance();
+			bar.settext("Creating Composition Relationship between "+c1+" and "+c2);
 			bb.addrelationship(r);
 		}
 		else if(action.equals("Inheritance")) {
 			Relationship r=new Relationship("Inheritance",c1,c2);
 			Storage bb=Storage.getInstance();
+			bar.settext("Creating Inheritance Relationship between "+c1+" and "+c2);
 			bb.addrelationship(r);
 		}
 	}
@@ -77,27 +80,29 @@ public class Controller implements ActionListener,MouseListener {
 		if(clickNumber==0) {
 			result = evaluator.evaluateCollision(x, y);
 			if(result.length() != 0) {
-				System.out.println(result+" Class exists");
-				bar.settext(result+" Class exists");
+				bar.settext(result+" Class exists, click on another class to form a relationship");
 				c1=result;
 				clickNumber=1;
 			}
 			else {
 				DrawRectangle s= new DrawRectangle();
 
-				bar.settext("creating class at "+x+","+y);
-				s.draw(d, x, y);
+//				bar.settext("creating class at "+x+","+y,bar);
+				s.draw(d, x, y,bar);
 			}
 		}
 		else if(clickNumber == 1) {
 			result = evaluator.evaluateCollision(x, y);
 			if(result.length() != 0) {
-				System.out.println(result+" Class 2 exists");
 				c2=result;
 				DrawRelationship dr=new DrawRelationship();
                 dr.draw();
-                bar.settext(result+" Class2 exists");
+                bar.settext(result+" Class2 exists, choose relationship type");
 				clickNumber = 0;
+			}
+			else {
+				 bar.settext("No class detected, please choose another class");
+				//clickNumber = 1;
 			}
 		}
 	}
