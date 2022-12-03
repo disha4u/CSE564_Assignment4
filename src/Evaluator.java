@@ -10,6 +10,10 @@
  * @author Karthikeya
  */
 public class Evaluator {
+	/**
+	 * This Method check whether click happens at the same where class is present,
+	 * @return String   
+	**/
 	public String evaluateCollision(double x, double y) {
 		String result = "";
 		Storage s = Storage.getInstance();

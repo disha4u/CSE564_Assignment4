@@ -17,7 +17,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author Karthikeya
  */
 public class FileOperations {
-
+	/**
+	 * Gets the file from the filchoose
+	 * @return File
+	 */
 	public File getFilePath() {
 		System.out.println("Here");
 		try {
@@ -31,6 +34,7 @@ public class FileOperations {
 			return null;
 		}
 	}
+
 
 	public void tofile(String fname) {
 		try {
@@ -87,7 +91,7 @@ public class FileOperations {
 				Relationship r;
 				r = new Relationship(s[2], s[0], s[1]);
 
-				System.out.println(r.toString());
+				// System.out.println(r.toString());
 				bb.addrelationship(r);
 
 			}
