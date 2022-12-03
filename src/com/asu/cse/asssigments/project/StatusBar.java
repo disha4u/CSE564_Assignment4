@@ -5,23 +5,28 @@ import java.awt.Dimension;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class StatusBar extends JPanel implements Observer {
+public class StatusBar extends JPanel {
 	
 	Storage storage = Storage.getInstance();
 	JLabel label;
+	String txt="STATUS: ";
 	StatusBar()
 	{
-//		setSize(new Dimension(400, 400));
+
 		label = new JLabel();
 		add(label);
-		setBackground(Color.RED);
+		setBackground(Color.WHITE);
 	}
 	
-	@Override
-	public void Update(Observable o) {
-		// TODO Auto-generated method stub
-		int index = storage.getclasssize();
-		
+	public void settext(String s) {
+		label.setText(txt+s);
 	}
+	
+//	@Override
+//	public void Update(Observable o) {
+//		// TODO Auto-generated method stub
+//		int index = storage.getclasssize();
+//		
+//	}
 
 }

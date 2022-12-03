@@ -11,11 +11,13 @@ import java.io.File;
 
 public class Controller implements ActionListener,MouseListener {
 	 Drawable d;
+	 StatusBar bar;
 	 static String c1,c2;
 	 static int clickNumber = 0;
 	 String result;
-	 Controller(Drawable d){
+	 Controller(Drawable d, StatusBar bar){
     	this.d=d;
+    	this.bar=bar;
     }
     
     Controller(){
@@ -76,11 +78,14 @@ public class Controller implements ActionListener,MouseListener {
 			result = evaluator.evaluateCollision(x, y);
 			if(result.length() != 0) {
 				System.out.println(result+" Class exists");
+				bar.settext(result+" Class exists");
 				c1=result;
 				clickNumber=1;
 			}
 			else {
 				DrawRectangle s= new DrawRectangle();
+
+				bar.settext("creating class at "+x+","+y);
 				s.draw(d, x, y);
 			}
 		}
@@ -91,7 +96,7 @@ public class Controller implements ActionListener,MouseListener {
 				c2=result;
 				DrawRelationship dr=new DrawRelationship();
                 dr.draw();
-				
+                bar.settext(result+" Class2 exists");
 				clickNumber = 0;
 			}
 		}
