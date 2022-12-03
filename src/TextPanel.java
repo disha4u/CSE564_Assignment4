@@ -16,9 +16,9 @@ import javax.swing.JTextArea;
  */
 public class TextPanel implements Observer, Runnable {
 	Storage storage = Storage.getInstance();
-	Writable writable;
+	JTextArea writable;
 
-	TextPanel(Writable writable) {
+	TextPanel(JTextArea writable) {
 		this.writable = writable;
 	}
 

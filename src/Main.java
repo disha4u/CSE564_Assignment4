@@ -25,7 +25,7 @@ public class Main extends JFrame {
 	 * @param PlotPanel object
 	 * @param Source    object
 	 */
-	Writable writable;
+	JTextArea writable;
 
 	Main() {
 		BorderLayout borderLayout = new BorderLayout();
@@ -34,7 +34,7 @@ public class Main extends JFrame {
 		preferred.setSize(Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 2,
 				Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 2);
 		Drawable drawable = new Drawable();
-		writable = new Writable();
+		writable = new JTextArea();
 		JScrollPane taScroll = new JScrollPane(writable);
 		drawable.setPreferredSize(new Dimension(preferred.width / 2, preferred.height));
 		writable.setPreferredSize(new Dimension(preferred.width / 2, preferred.height));
@@ -77,7 +77,7 @@ public class Main extends JFrame {
 		Main m = new Main();
 		TextPanel textPanel = new TextPanel(m.writable);
 		Storage storage = Storage.getInstance();
-		Storage.getInstance().addObservers(textPanel);
+		storage.addObservers(textPanel);
 	}
 
 }
