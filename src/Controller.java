@@ -1,4 +1,4 @@
-package com.asu.cse.asssigments.project;
+
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -14,8 +14,7 @@ public class Controller implements ActionListener,MouseListener {
 	 StatusBar bar;
 	 static String c1,c2;
 	 static int clickNumber = 0;
-	 Objects dragDrop;
-	 String className;
+	 String result;
 	 Controller(Drawable d, StatusBar bar){
     	this.d=d;
     	this.bar=bar;
@@ -53,19 +52,16 @@ public class Controller implements ActionListener,MouseListener {
 			Storage bb=Storage.getInstance();
 			c1="";
 			c2="";
-			bar.settext("Creating Association Relationship between "+c1+" and "+c2);
 			bb.addrelationship(r);
 		}
 		else if(action.equals("Composition")) {
 			Relationship r=new Relationship("Composition",c1,c2);
 			Storage bb=Storage.getInstance();
-			bar.settext("Creating Composition Relationship between "+c1+" and "+c2);
 			bb.addrelationship(r);
 		}
 		else if(action.equals("Inheritance")) {
 			Relationship r=new Relationship("Inheritance",c1,c2);
 			Storage bb=Storage.getInstance();
-			bar.settext("Creating Inheritance Relationship between "+c1+" and "+c2);
 			bb.addrelationship(r);
 		}
 	}
@@ -77,42 +73,35 @@ public class Controller implements ActionListener,MouseListener {
 		y=e.getY();
 		Evaluator evaluator = new Evaluator();
 		
-		Objects result;
+		String result;
 		if(clickNumber==0) {
 			result = evaluator.evaluateCollision(x, y);
-			if(result!=null) {
-				bar.settext(result+" Class exists, click on another class to form a relationship");
-				c1=result.getname();
-				if (result.getx()==x) {
-					c1="";
-				}
-				else {
+			if(result.length() != 0) {
+				System.out.println(result+" Class exists");
+				bar.settext(result+" Class exists");
+				c1=result;
 				clickNumber=1;
-				}
 			}
 			else {
 				DrawRectangle s= new DrawRectangle();
 
-//				bar.settext("creating class at "+x+","+y,bar);
-				s.draw(d, x, y,bar);
+				bar.settext("creating class at "+x+","+y);
+				s.draw(d, x, y);
 			}
 		}
 		else if(clickNumber == 1) {
 			result = evaluator.evaluateCollision(x, y);
-			if(result!= null) {
-				c2=result.getname();
+			if(result.length() != 0) {
+				System.out.println(result+" Class 2 exists");
+				c2=result;
 				DrawRelationship dr=new DrawRelationship();
                 dr.draw();
-                bar.settext(result+" Class2 exists, choose relationship type");
+                bar.settext(result+" Class2 exists");
 				clickNumber = 0;
-			}
-			else {
-				 bar.settext("No class detected, please choose another class");
 			}
 		}
 	}
-	
-	
+
 	@Override
 	public void mousePressed(MouseEvent e) {
 		double x, y; 
@@ -120,10 +109,7 @@ public class Controller implements ActionListener,MouseListener {
 		y=e.getY();
 		Evaluator evaluator = new Evaluator();
 
-		dragDrop = evaluator.evaluateCollision(x, y);
-		if (dragDrop!= null) {
-			className = dragDrop.getname();
-		}
+		result = evaluator.evaluateCollision(x, y);
 	}
 
 	@Override
@@ -132,9 +118,7 @@ public class Controller implements ActionListener,MouseListener {
 		x=e.getX(); 
 		y=e.getY();
 		Storage bb=Storage.getInstance();
-		bb.modifyclass(className, x, y);
-		c1="";
-		className=null;
+		bb.modifyclass(result, x, y);
 	}
 
 	@Override
