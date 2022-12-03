@@ -42,7 +42,7 @@ public class Main extends JFrame  {
 		fileOption.add(subMenu1);
 		fileOption.add(subMenu2);
 		fileOption.add(subMenu3);
-		Controller controller = new Controller(drawable);
+		Controller controller = new Controller(drawable,statusBar);
 		subMenu1.addActionListener(controller);
         subMenu2.addActionListener(controller);
         subMenu3.addActionListener(controller);

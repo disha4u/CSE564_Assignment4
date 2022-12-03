@@ -12,12 +12,7 @@ public class DrawRectangle {
 	
 	public void draw(Drawable d,double x, double y) {
 		// TODO Auto-generated method stub
-		
-		
-		//Graphics2D graphics = (Graphics2D) g.create();
-		//graphics.fill(new Rectangle2D.Double(BoxDimesions.length, BoxDimesions.width, x, y));
-		//graphics.setColor(Color.RED);
-		
+			
 		String text = (String) JOptionPane.showInputDialog("Enter name:");
 		
 		if(text!=null) {
